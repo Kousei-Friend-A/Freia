@@ -87,7 +87,7 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     DB_URL = os.environ.get(
         "DATABSE_URL",
-        "postgresql://eptbyege:0TbLe5xjHocel_1kPTXvKyOi54oV8ywf@tyke.db.elephantsql.com/eptbyege",
+        "postgresql://cossaojk:apEf76LRIlm0RL_SUngGreMghS7Bm5fb@castor.db.elephantsql.com/cossaojk",
     )
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
