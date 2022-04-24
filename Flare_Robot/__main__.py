@@ -80,28 +80,28 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 ────「 {} 」────
 *Heyaa! {}*
-*I am a group management bot with a lots of Kawaii advance Features.
+*I am a group management bot with a lots of  advance Features.
 
 ❃⋆✦⋆──────────────⋆✦⋆❃
 ➷ *Uptime:* {}
-➷ `{}` *users are Kawaii
+➷ {} *users are Sexxy
 ❃⋆✦⋆──────────────⋆✦⋆❃
 
-➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/87fc99fdb207271b9439a.jpg) ××
+➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/cc6b37f5c4b2e6a0d5254.jpg) ××
 """
 
 
 buttons = [
     [
         InlineKeyboardButton(
-            text=f"Add Cute kawaii To Your Group",
+            text=f"Add Freia To Your Group",
             url=f"t.me/Kawai_probot?startgroup=true",
         )
     ],
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
         InlineKeyboardButton(text="🌎Chit Chat", url="https://t.me/Freia_Support"),
-        InlineKeyboardButton(text="[► Inline ◄]", switch_inline_query_current_chat=""),
+        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Asta_Silva02"),
     ],
     [
         InlineKeyboardButton(text="🚑Support", url=f"https://t.me/{SUPPORT_CHAT}"),
@@ -126,7 +126,7 @@ Main commands available[.](https://telegra.ph/file/83b00bff39cb132dd3795.jpg)
 )
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-FLARE_IMG = "https://telegra.ph/file/9720f17d6d8fb47a0ae58.mp4"
+FLARE_IMG = "https://telegra.ph/file/7bee20c785cbed7616ad3.mp4"
 HELP_IMG = "https://telegra.ph/file/83b00bff39cb132dd3795.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
@@ -249,7 +249,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_animation(
             FLARE_IMG,
-            caption="<b>Hoi-Hoi! It's me the Kawaii;)!\nHaven't sleep since</b>: <code>{}</code>".format(
+            caption="<b>Oh! Darling I wont sleep until I satisfy you ;)!\nHaven't sleep since</b>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -623,7 +623,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                "[Hehe, now Kawaii got fully charged of Beauty!!](https://telegra.ph/file/72792bfea6576f0ea1873.mp4)",
+                "[Lets go! I got a free ticket of OYO!!](https://telegra.ph/file/37ddebbe97a0e971dc094.jpg)",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
