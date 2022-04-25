@@ -5,7 +5,6 @@ import re
 import aiofiles
 from pykeyboard import InlineKeyboard
 from pyrogram import filters
-from pyrogram.filters import edited
 from pyrogram.types import InlineKeyboardButton
 
 from Flare_Robot import pbot, aiohttpsession
