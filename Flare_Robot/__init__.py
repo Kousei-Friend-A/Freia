@@ -98,7 +98,7 @@ if ENV:
     MONGO_DB = "Flare"
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     BAN_STICKER = os.environ.get("BAN_STICKER", "CAADAgADOwADPPEcAXkko5EB3YGYAg")
-    MESSAGE_DUMP = os.environ.get("MESSAGE_DUMP", "-1001527971671")
+    MESSAGE_DUMP = os.environ.get("MESSAGE_DUMP", "-1001643635068)
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
