@@ -54,3 +54,4 @@ humanize
 fontTools
 envparse
 geopy
+urllib3>=1.10
