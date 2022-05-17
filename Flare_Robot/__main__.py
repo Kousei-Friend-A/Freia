@@ -95,7 +95,7 @@ buttons = [
     [
         InlineKeyboardButton(
             text=f"Add Freia To Your Group",
-            url=f"t.me/Kawai_probot?startgroup=true",
+            url=f"t.me/Flare_Robot?startgroup=true",
         )
     ],
     [
