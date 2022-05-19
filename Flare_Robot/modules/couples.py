@@ -57,7 +57,6 @@ async def couple(_, message):
 __New couple of the day may be chosen at 12AM {tomorrow}__"""
             await pbot.send_message(message.chat.id, text=couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
-            )
 
         else:
             c1_id = int(is_selected["c1_id"])
