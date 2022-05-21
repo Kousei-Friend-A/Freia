@@ -95,16 +95,16 @@ buttons = [
     [
         InlineKeyboardButton(
             text=f"Add Freia To Your Group",
-            url=f"t.me/Flare_Robot?startgroup=true",
+            url=f"t.me/FlareXRobot?startgroup=true",
         )
     ],
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
-        InlineKeyboardButton(text="🌎Chit Chat", url="https://t.me/Freia_Support"),
+        InlineKeyboardButton(text="🌎Chit Chat", url="https://t.me/FreiaXSupport"),
         InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Asta_Silva02"),
     ],
     [
-        InlineKeyboardButton(text="🚑Support", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="🚑Support", url=f"https://t.me/FreiaXSupport"),
         InlineKeyboardButton(text="📡Updates", url="https://t.me/Freia_Updates"),
     ],
 ]
@@ -622,7 +622,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}",
+                f"FreiaXSupport",
                 "[Lets go! I got a free ticket of OYO!!](https://telegra.ph/file/37ddebbe97a0e971dc094.jpg)",
                 parse_mode=ParseMode.MARKDOWN,
             )
