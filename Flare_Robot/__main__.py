@@ -622,7 +622,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(
-                f"FreiaXSupport",
+                f"@FreiaXSupport",
                 "[Lets go! I got a free ticket of OYO!!](https://telegra.ph/file/37ddebbe97a0e971dc094.jpg)",
                 parse_mode=ParseMode.MARKDOWN,
             )
