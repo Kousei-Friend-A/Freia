@@ -101,7 +101,7 @@ buttons = [
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
         InlineKeyboardButton(text="🌎Chit Chat", url="https://t.me/FreiaXSupport"),
-        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Asta_Silva02"),
+        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Asta_Silva002"),
     ],
     [
         InlineKeyboardButton(text="🚑Support", url=f"https://t.me/FreiaXSupport"),
