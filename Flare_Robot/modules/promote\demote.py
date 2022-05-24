@@ -8,7 +8,7 @@ from telegram.utils.helpers import mention_html
 from telethon import events
 from telethon.tl import functions, types
 
-from Flare_Robot import DRAGONS, dispatcher, telethn as bot
+from Flare_Robot import DRAGONS, dispatcher, INFOPIC, telethn as bot
 from Flare_Robot.modules.disable import DisableAbleCommandHandler
 from Flare_Robot.modules.helper_funcs.chat_status import (
     bot_admin,
@@ -132,6 +132,30 @@ def ppromote(update: Update, context: CallbackContext) -> str:
         return
 
     message.reply_text(
+                caption="#Succesfully Promoted",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "User", url="user_member.user.id, user_member.user.first_name"
+                            ),
+                            InlineKeyboardButton(
+                                "Admin", url="user.id, user.first_name"
+                            ),
+                        ],
+                    ]
+                ),
+                parse_mode=ParseMode.HTML,
+            )
+
+    if INFOPIC:
+        try:
+            profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
+            _file = bot.get_file(profile["file_id"])
+            _file.download(f"{user.id}.jpg")
+
+            message.reply_photo(
+                photo=open(f"{user.id}.jpg", "rb"),
                 caption="#Succesfully Promoted",
                 reply_markup=InlineKeyboardMarkup(
                     [
