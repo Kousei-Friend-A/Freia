@@ -132,31 +132,6 @@ def ppromote(update: Update, context: CallbackContext) -> str:
         return
 
     message.reply_text(
-                caption="#Succesfully Promoted",
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "User", url="user_member.user.id, user_member.user.first_name"
-                            ),
-                            InlineKeyboardButton(
-                                "Admin", url="user.id, user.first_name"
-                            ),
-                        ],
-                    ]
-                ),
-                parse_mode=ParseMode.HTML,
-            )
-
-    if INFOPIC:
-        try:
-            profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
-            _file = bot.get_file(profile["file_id"])
-            _file.download(f"{user.id}.jpg")
-
-            message.reply_photo(
-                photo=open(f"{user.id}.jpg", "rb"),
-                caption="#Succesfully Promoted",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
