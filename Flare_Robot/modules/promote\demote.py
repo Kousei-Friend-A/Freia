@@ -132,20 +132,12 @@ def ppromote(update: Update, context: CallbackContext) -> str:
         return
 
     bot.sendMessage(
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "User", url="user_member.user.id, user_member.user.first_name"
-                            ),
-                            InlineKeyboardButton(
-                                "Admin", url="user.id, user.first_name"
-                            ),
-                        ],
-                    ]
-                ),
-                parse_mode=ParseMode.HTML,
-            )
+        chat.id,
+       + f"# SUCCESSFULY PROMOTED\n"
+       + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+       + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
+        parse_mode=ParseMode.HTML,
+    )
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
