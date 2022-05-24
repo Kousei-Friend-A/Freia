@@ -1,7 +1,7 @@
 import os
 import html
 
-from telegram import ParseMode, Update
+from telegram import ParseMode, Update, InlineKeyboardButton, InlineKeyboardMarkup,
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
@@ -132,7 +132,7 @@ def ppromote(update: Update, context: CallbackContext) -> str:
         return
 
     message.reply_text(
-                caption="#Succesfully Promoted ,
+                caption="#Succesfully Promoted",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
