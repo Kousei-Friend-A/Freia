@@ -614,12 +614,12 @@ __help__ = """
 """
 
 
-PROMOTE_HANDLER = DisableAbleCommandHandler("ppromote", ppromote, run_async=True)
-FULLPROMOTE_HANDLER = DisableAbleCommandHandler("ffullpromote", ffullpromote, run_async=True)
+PPROMOTE_HANDLER = DisableAbleCommandHandler("ppromote", ppromote, run_async=True)
+FFULLPROMOTE_HANDLER = DisableAbleCommandHandler("ffullpromote", ffullpromote, run_async=True)
 LOW_PROMOTE_HANDLER = DisableAbleCommandHandler("lowpromote", lowpromote, run_async=True)
 MID_PROMOTE_HANDLER = DisableAbleCommandHandler("midpromote", midpromote, run_async=True)
-DEMOTE_HANDLER = DisableAbleCommandHandler("ddemote", ddemote, run_async=True)
-SET_TITLE_HANDLER = CommandHandler("ttitle", set_ttitle, run_async=True)
+DDEMOTE_HANDLER = DisableAbleCommandHandler("ddemote", ddemote, run_async=True)
+SET_TTITLE_HANDLER = CommandHandler("ttitle", set_ttitle, run_async=True)
 
 dispatcher.add_handler(PPROMOTE_HANDLER)
 dispatcher.add_handler(FFULLPROMOTE_HANDLER)
