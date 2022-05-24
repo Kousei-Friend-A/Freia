@@ -133,11 +133,9 @@ def ppromote(update: Update, context: CallbackContext) -> str:
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully promoted 
-        Promoted users — <b>{user_member.user.first_name or user_id}</b>!
-        Promoted by —  {}.".format(
-                    mention_html(user.id, user.first_name)"
-        
+        f"# SUCCESSFULLY PROMOTED\n"
+       + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+       + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
               parse_mode=ParseMode.HTML,
     )
 
@@ -213,13 +211,15 @@ def midpromote(update: Update, context: CallbackContext) -> str:
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully Mid Promoted <b>{user_member.user.first_name or user_id}</b> with low rights!",
+       + f"#MIDPROMOTED\n"
+       + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+       + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
         parse_mode=ParseMode.HTML,
     )
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#MIDPROMOTED\n"
+        f"#SUCCESSFULLY MIDPROMOTED\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
@@ -288,7 +288,9 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully Low Promoted <b>{user_member.user.first_name or user_id}</b> with low rights!",
+       + f"#SUCCESSFULLY LOWPROMOTED\n"
+       + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+       + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
         parse_mode=ParseMode.HTML,
     )
 
@@ -370,8 +372,10 @@ def ffullpromote(update: Update, context: CallbackContext) -> str:
         return
 
     message.reply_text(
-        f"Fully Promoted <b>{user_member.user.first_name or user_id}</b>"
-        + f" with title <code>{title[:16]}</code>!",
+      + f"# FULLY PROMOTED\n"
+      + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+      + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+      + f" with title <code>{title[:16]}</code>!",
         parse_mode=ParseMode.HTML,
     )
 
