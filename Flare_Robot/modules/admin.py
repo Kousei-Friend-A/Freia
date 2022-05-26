@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from Flare_Robot import DRAGONS, dispatcher, telethon as bot
+from Flare_Robot import DRAGONS, dispatcher, telethn as bot
 from Flare_Robot.modules.helper_funcs.alternate import typing_action
 from Flare_Robot.modules.disable import DisableAbleCommandHandler
 from Flare_Robot.modules.helper_funcs.alternate import send_message
@@ -25,6 +25,42 @@ from Flare_Robot.modules.helper_funcs.extraction import (
     extract_user_and_text,
 )
 from Flare_Robot.modules.log_channel import loggable
+
+
+async def is_register_admin(chat, user):
+    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
+        return isinstance(
+            (
+                await bot(functions.channels.GetParticipantRequest(chat, user))
+            ).participant,
+            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
+        )
+    if isinstance(chat, types.InputPeerUser):
+        return True
+    
+async def can_promote_users(message):
+    result = await bot(
+        functions.channels.GetParticipantRequest(
+            channel=message.chat_id,
+            user_id=message.sender_id,
+        )
+    )
+    p = result.participant
+    return isinstance(p, types.ChannelParticipantCreator) or (
+        isinstance(p, types.ChannelParticipantAdmin) and p.admin_rights.ban_users
+    )
+
+async def can_ban_users(message):
+    result = await bot(
+        functions.channels.GetParticipantRequest(
+            channel=message.chat_id,
+            user_id=message.sender_id,
+        )
+    )
+    p = result.participant
+    return isinstance(p, types.ChannelParticipantCreator) or (
+        isinstance(p, types.ChannelParticipantAdmin) and p.admin_rights.ban_users
+    )
 
 
 @connection_status
