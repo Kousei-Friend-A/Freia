@@ -9,7 +9,7 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 	
   <h1>
     <p align="center">
-        <a href="https://heroku.com/deploy?template=https://github.com/Asta-silva/Flare.git">
+        <a href="https://heroku.com/deploy?template=https://github.com/Asta-silva/Freia.git">
             <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
         </a>
     </p>
@@ -18,6 +18,6 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 
 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Asta-vir/Flare_Robot.git)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Asta-Silva/Freia.git)
 
 </details>  
