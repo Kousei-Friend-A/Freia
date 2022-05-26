@@ -548,76 +548,7 @@ async def lowdemote(dmod):
         return
 
 
-@connection_status
-@bot_admin
-@can_promote
-@user_admin
-@loggable
-def ddemote(update: Update, context: CallbackContext) -> str:
-    bot = context.bot
-    args = context.args
 
-    chat = update.effective_chat
-    message = update.effective_message
-    user = update.effective_user
-
-    user_id = extract_user(message, args)
-    if not user_id:
-        message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect..",
-        )
-        return
-
-    try:
-        user_member = chat.get_member(user_id)
-    except:
-        return
-
-    if user_member.status == "creator":
-        message.reply_text("This person CREATED the chat, how would I demote them?")
-        return
-
-    if not user_member.status == "administrator":
-        message.reply_text("Can't demote what wasn't promoted!")
-        return
-
-    if user_id == bot.id:
-        message.reply_text("I can't demote myself! Get an admin to do it for me.")
-        return
-
-    try:
-        bot.promoteChatMember(
-            chat.id,
-            user_id,
-            can_change_info=False,
-            can_post_messages=False,
-            can_edit_messages=False,
-            can_delete_messages=False,
-            can_invite_users=False,
-            can_restrict_members=False,
-            can_pin_messages=False,
-            can_promote_members=False,
-            can_manage_voice_chats=False,
-        )
-        message.reply_text(
-            f"Successfully demoted <b>{user_member.user.first_name or user_id}</b>!",
-            parse_mode=ParseMode.HTML,
-        )
-
-        log_message = (
-            f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#DEMOTED\n"
-            f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
-        )
-
-        return log_message
-    except BadRequest:
-        message.reply_text(
-            "Could not demote. I might not be admin, or the admin status was appointed by another"
-            " user, so I can't act upon them!",
-        )
-        return
 
 
 
