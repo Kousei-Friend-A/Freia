@@ -1011,7 +1011,7 @@ PROMOTE_HANDLER = DisableAbleCommandHandler("promote", promote, run_async=True)
 FULLPROMOTE_HANDLER = DisableAbleCommandHandler("fullpromote", fullpromote, run_async=True)
 LOW_PROMOTE_HANDLER = DisableAbleCommandHandler("lowpromote", lowpromote, run_async=True)
 MID_PROMOTE_HANDLER = DisableAbleCommandHandler("midpromote", midpromote, run_async=True)
-DEMOTE_HANDLER = DisableAbleCommandHandler("ddemote", ddemote, run_async=True)
+DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote, run_async=True)
 SET_TITLE_HANDLER = CommandHandler("ttitle", set_title, run_async=True)
 CHAT_PIC_HANDLER = CommandHandler(
     "setgpic", setchatpic, filters=Filters.chat_type.groups, run_async=True
