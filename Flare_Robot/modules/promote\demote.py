@@ -140,7 +140,7 @@ def ppromote(update: Update, context: CallbackContext) -> str:
 
     TEXT = "#SUCCESSFULLY PROMOTED"
 
-    awai tbot.send_file(event.chat_id, caption=TEXT, buttons=BUTTON)
+    await bot.send_file(event.chat_id, caption=TEXT, buttons=BUTTON)
 
 
     log_message = (
