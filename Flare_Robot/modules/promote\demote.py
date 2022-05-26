@@ -131,7 +131,7 @@ def ppromote(update: Update, context: CallbackContext) -> str:
             message.reply_text("An error occured while promoting.")
         return
 
-    message.reply_text(
+    bot.sendMessage(
                 caption="#Succesfully Promoted",
                 reply_markup=InlineKeyboardMarkup(
                     [
