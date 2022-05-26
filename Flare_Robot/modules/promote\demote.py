@@ -5,7 +5,7 @@ from telegram import ParseMode, Update, InlineKeyboardButton, InlineKeyboardMark
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
-from telethon import events
+from telethon import events, Button
 from telethon.tl import functions, types
 
 from Flare_Robot import DRAGONS, dispatcher, INFOPIC, telethn as bot
