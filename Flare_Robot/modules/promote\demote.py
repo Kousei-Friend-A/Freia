@@ -141,7 +141,7 @@ def ppromote(update: Update, context: CallbackContext) -> str:
     TEXT = "#SUCCESSFULLY PROMOTED"
 
     bot.send_file(
-                caption=TEXT
+                caption=TEXT,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
