@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from Flare_Robot import DRAGONS, dispatcher
+from Flare_Robot import DRAGONS, dispatcher, telethon as bot
 from Flare_Robot.modules.helper_funcs.alternate import typing_action
 from Flare_Robot.modules.disable import DisableAbleCommandHandler
 from Flare_Robot.modules.helper_funcs.alternate import send_message
