@@ -32,7 +32,7 @@ from Flare_Robot.modules.log_channel import loggable
 @can_promote
 @user_admin
 @loggable
-def ppromote(update: Update, context: CallbackContext) -> str:
+def promote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
 
@@ -194,7 +194,7 @@ def midpromote(update: Update, context: CallbackContext) -> str:
 @can_promote
 @user_admin
 @loggable
-def ddemote(update: Update, context: CallbackContext) -> str:
+def demote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
 
@@ -268,7 +268,7 @@ def ddemote(update: Update, context: CallbackContext) -> str:
 @can_promote
 @user_admin
 @loggable
-def ffullpromote(update: Update, context: CallbackContext) -> str:
+def fullpromote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
 
