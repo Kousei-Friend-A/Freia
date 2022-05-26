@@ -134,6 +134,7 @@ def promote(update: Update, context: CallbackContext) -> str:
     bot.sendMessage(
         chat.id,
          f"# SUCCESFULLY PROMOTED\n"
+       + f"       "
        + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
        + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
         parse_mode=ParseMode.HTML,
@@ -213,6 +214,7 @@ def midpromote(update: Update, context: CallbackContext) -> str:
     bot.sendMessage(
         chat.id,
          f"#MIDPROMOTED\n"
+       + f"     "
        + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
        + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
         parse_mode=ParseMode.HTML,
@@ -281,6 +283,7 @@ def demote(update: Update, context: CallbackContext) -> str:
         bot.sendMessage(
         chat.id,
          f"#DEMOTED\n"
+       + f"    "
        + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
        + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
         parse_mode=ParseMode.HTML,
@@ -370,6 +373,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     message.reply_text(
         f"# FULLY PROMOTED\n"
+      + f"   "
       + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
       + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
       + f" with title <code>{title[:16]}</code>!",
@@ -448,6 +452,7 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
     bot.sendMessage(
         chat.id,
          f"#SUCCESSFULLY LOWPROMOTED\n"
+       + f"     "
        + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
        + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
         parse_mode=ParseMode.HTML,
