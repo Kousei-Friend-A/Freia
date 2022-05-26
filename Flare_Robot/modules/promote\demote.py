@@ -138,7 +138,9 @@ def ppromote(update: Update, context: CallbackContext) -> str:
             message.reply_text("An error occured while promoting.")
         return
 
-    bot.send_file(event.chat_id, caption=User Successfully Promoted, buttons=BUTTON)
+    TEXT = #SUCCESSFULLY PROMOTED
+
+    bot.send_file(event.chat_id, caption=TEXT, buttons=BUTTON)
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
