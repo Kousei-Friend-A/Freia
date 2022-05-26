@@ -104,16 +104,6 @@
          "required": false,
          "value": ""
       },
-      "DB_URI": {
-         "description": "Add your Db_URI.",
-         "required": true,
-         "value": "postgresql://eptbyege:0TbLe5xjHocel_1kPTXvKyOi54oV8ywf@tyke.db.elephantsql.com/eptbyege"
-      },
-      "DATABASE_URI": {
-         "description": "Add your Db_URI.",
-         "required": true,
-         "value": "postgresql://eptbyege:0TbLe5xjHocel_1kPTXvKyOi54oV8ywf@tyke.db.elephantsql.com/eptbyege"
-      },
       "DATABASE_URL": {
          "description": "Add your Db_URI.",
          "required": true,
