@@ -551,7 +551,7 @@ async def lowdemote(dmod):
 @bot_admin
 @can_promote
 @user_admin
-def set_ttitle(update: Update, context: CallbackContext):
+def set_title(update: Update, context: CallbackContext):
     bot = context.bot
     args = context.args
 
