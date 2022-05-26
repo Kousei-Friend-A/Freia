@@ -1,11 +1,11 @@
 import os
 import html
 
-from telegram import ParseMode, Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
-from telethon import events, Button
+from telethon import events
 from telethon.tl import functions, types
 
 from Flare_Robot import DRAGONS, dispatcher, INFOPIC, telethn as bot
@@ -167,13 +167,34 @@ __help__ = """
 
 
 PPROMOTE_HANDLER = DisableAbleCommandHandler("ppromote", ppromote, run_async=True)
+FFULLPROMOTE_HANDLER = DisableAbleCommandHandler("ffullpromote", ffullpromote, run_async=True)
+LOW_PROMOTE_HANDLER = DisableAbleCommandHandler("lowpromote", lowpromote, run_async=True)
+MID_PROMOTE_HANDLER = DisableAbleCommandHandler("midpromote", midpromote, run_async=True)
+DDEMOTE_HANDLER = DisableAbleCommandHandler("ddemote", ddemote, run_async=True)
+SET_TTITLE_HANDLER = CommandHandler("ttitle", set_ttitle, run_async=True)
 
 dispatcher.add_handler(PPROMOTE_HANDLER)
+dispatcher.add_handler(FFULLPROMOTE_HANDLER)
+dispatcher.add_handler(LOW_PROMOTE_HANDLER)
+dispatcher.add_handler(MID_PROMOTE_HANDLER)
+dispatcher.add_handler(DDEMOTE_HANDLER)
+dispatcher.add_handler(SET_TTITLE_HANDLER)
 
 __mod_name__ = "Admins"
 __command_list__ = [
+    "promote", 
+    "fullpromote",
+    "lowpromote",
+    "midpromote",
+    "demote",
+    "title",
     "promote",
 ]
 __handlers__ = [
     PPROMOTE_HANDLER,
+    FFULLPROMOTE_HANDLER,
+    LOW_PROMOTE_HANDLER,
+    MID_PROMOTE_HANDLER,
+    DDEMOTE_HANDLER,
+    SET_TTITLE_HANDLER,
 ]
