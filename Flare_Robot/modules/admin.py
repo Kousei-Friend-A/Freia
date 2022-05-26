@@ -5,6 +5,8 @@ from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
+from telethon import events
+from telethon.tl import functions, types
 
 from Flare_Robot import DRAGONS, dispatcher, telethn as bot
 from Flare_Robot.modules.helper_funcs.alternate import typing_action
