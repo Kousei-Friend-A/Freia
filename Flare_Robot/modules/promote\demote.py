@@ -29,6 +29,13 @@ from Flare_Robot.modules.helper_funcs.extraction import (
 from Flare_Robot.modules.log_channel import loggable
 from Flare_Robot.modules.helper_funcs.alternate import send_message
 
+BUTTON = [
+        [
+            Button.url("📢 User", "user_member.user.id, user_member.user.first_name"),
+            Button.url("🚑 By Admin", "user.id, user.first_name"),
+        ]
+    ]
+
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
         return isinstance(
@@ -131,22 +138,7 @@ def ppromote(update: Update, context: CallbackContext) -> str:
             message.reply_text("An error occured while promoting.")
         return
 
-    bot.sendMessage(
-                caption="#Succesfully Promoted",
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "User", url="user_member.user.id, user_member.user.first_name"
-                            ),
-                            InlineKeyboardButton(
-                                "Admin", url="user.id, user.first_name"
-                            ),
-                        ],
-                    ]
-                ),
-                parse_mode=ParseMode.HTML,
-            )
+    await bot.send_file(event.chat_id, caption=TEXT, buttons=BUTTON)
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
