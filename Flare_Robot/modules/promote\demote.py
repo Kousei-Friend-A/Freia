@@ -548,10 +548,70 @@ async def lowdemote(dmod):
         return
 
 
+@connection_status
+@bot_admin
+@can_promote
+@user_admin
+def set_ttitle(update: Update, context: CallbackContext):
+    bot = context.bot
+    args = context.args
 
+    chat = update.effective_chat
+    message = update.effective_message
 
+    user_id, title = extract_user_and_text(message, args)
+    try:
+        user_member = chat.get_member(user_id)
+    except:
+        return
 
+    if not user_id:
+        message.reply_text(
+            "You don't seem to be referring to a user or the ID specified is incorrect..",
+        )
+        return
 
+    if user_member.status == "creator":
+        message.reply_text(
+            "This person CREATED the chat, how can i set custom title for him?",
+        )
+        return
+
+    if user_member.status != "administrator":
+        message.reply_text(
+            "Can't set title for non-admins!\nPromote them first to set custom title!",
+        )
+        return
+
+    if user_id == bot.id:
+        message.reply_text(
+            "I can't set my own title myself! Get the one who made me admin to do it for me.",
+        )
+        return
+
+    if not title:
+        message.reply_text("Setting blank title doesn't do anything!")
+        return
+
+    if len(title) > 16:
+        message.reply_text(
+            "The title length is longer than 16 characters.\nTruncating it to 16 characters.",
+        )
+
+    try:
+        bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
+    except BadRequest:
+        message.reply_text(
+            "Either they aren't promoted by me or you set a title text that is impossible to set."
+        )
+        return
+
+    bot.sendMessage(
+        chat.id,
+        f"Sucessfully set title for <code>{user_member.user.first_name or user_id}</code> "
+        f"to <code>{html.escape(title[:16])}</code>!",
+        parse_mode=ParseMode.HTML,
+    )
 __help__ = """
 *Promote & Demote Commands are Admins only*:
   ➢ `/promote (user) (?admin's title)`*:* Promotes the user to admin.
