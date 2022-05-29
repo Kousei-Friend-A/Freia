@@ -18,7 +18,7 @@ from telegram import (
     ParseMode,
     Update,
     MessageEntity,
-    __version__ as ptbver,
+    __version__ as ptbversion,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
 )
