@@ -11,7 +11,7 @@ from psutil import cpu_percent, virtual_memory, disk_usage, boot_time
 from platform import python_version
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-from telethon import events, Burton
+from telethon import events, Button
 
 from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity, __version__ as ptbver, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext, CommandHandler
