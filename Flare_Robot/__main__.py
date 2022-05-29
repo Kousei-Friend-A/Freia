@@ -87,7 +87,7 @@ PM_START_TEXT = """
 ➷ {} *users are Sexxy
 ❃⋆✦⋆──────────────⋆✦⋆❃
 
-➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/aaa94603e4c7a7bcb89f0.jpg) ××
+➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/28c847536559a3e529f11.jpg) ××
 """
 
 
@@ -100,11 +100,11 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
-        InlineKeyboardButton(text="🌎Chit Chat", url="https://t.me/FreiaXSupport"),
+        InlineKeyboardButton(text="🌎Chit Chat", url="https://t.me/KamadoSupport"),
         InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Asta_Silva002"),
     ],
     [
-        InlineKeyboardButton(text="🚑Support", url=f"https://t.me/FreiaXSupport"),
+        InlineKeyboardButton(text="🚑Support", url=f"https://t.me/KamadoSupport"),
         InlineKeyboardButton(text="📡Updates", url="https://t.me/Freia_Updates"),
     ],
 ]
@@ -130,7 +130,7 @@ FLARE_IMG = "https://telegra.ph/file/7bee20c785cbed7616ad3.mp4"
 HELP_IMG = "https://telegra.ph/file/83b00bff39cb132dd3795.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-But Kawaii is free for everyone"""
+But Freia is free for everyone"""
 
 IMPORTED = {}
 MIGRATEABLE = []
