@@ -498,7 +498,6 @@ def stats(update, context):
         )
     except BaseException:
         update.effective_message.reply_photo(
-            (
                     (
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
