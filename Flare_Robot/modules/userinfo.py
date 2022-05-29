@@ -42,7 +42,7 @@ from Flare_Robot.modules.sql.global_bans_sql import is_user_gbanned
 from Flare_Robot.modules.sql.users_sql import get_user_num_chats
 
 
-
+PHOTO= "https://telegra.ph/file/ad6084cb47b9c90fd10d6.jpg"
 def no_by_per(totalhp, percentage):
     """
     rtype: num of `percentage` from total
@@ -486,17 +486,18 @@ def stats(update, context):
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n"
     try:
-        update.effective_message.reply_text(
+        update.effective_message.reply_photo(
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
             + "╘══「 by [❁ＡＳＴＡ❁](https://t.me/Asta_Silva02) 」\n",
             buttons=BUTTON,
+            PHOTO,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
     except BaseException:
-        update.effective_message.reply_text(
+        update.effective_message.reply_photo(
             (
                     (
                         "\n*Bot statistics*:\n"
@@ -505,7 +506,8 @@ def stats(update, context):
                     
                 + "╘══「 by [Asta](https://t.me/Asta_Silva02) 」\n"
             ),
-            BUTTON,
+            buttons=BUTTON,
+            PHOTO,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
