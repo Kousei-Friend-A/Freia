@@ -608,7 +608,6 @@ Examples:
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio, run_async=True)
 GET_BIO_HANDLER = DisableAbleCommandHandler("bio", about_bio, run_async=True)
 
-STATS_HANDLER = CommandHandler("stats", stats, run_async=True)
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, run_async=True)
 GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid, run_async=True)
 INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info, run_async=True)
@@ -616,7 +615,6 @@ INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info, run_async=True)
 SET_ABOUT_HANDLER = DisableAbleCommandHandler("setme", set_about_me, run_async=True)
 GET_ABOUT_HANDLER = DisableAbleCommandHandler("me", about_me, run_async=True)
 
-dispatcher.add_handler(STATS_HANDLER)
 dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(GIFID_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
@@ -635,5 +633,4 @@ __handlers__ = [
     GET_BIO_HANDLER,
     SET_ABOUT_HANDLER,
     GET_ABOUT_HANDLER,
-    STATS_HANDLER,
 ]
