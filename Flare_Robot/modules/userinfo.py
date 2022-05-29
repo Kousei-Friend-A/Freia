@@ -11,7 +11,7 @@ from psutil import cpu_percent, virtual_memory, disk_usage, boot_time
 from platform import python_version
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-from telethon import events
+from telethon import events, Button
 
 from telegram import (
     MAX_MESSAGE_LENGTH,
@@ -470,8 +470,8 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + "╘══「 by [ᴀsᴛᴀ](https://t.me/Asta_Silva02) 」\n",
-            BUTTON,
+            + "╘══「 by [❁ＡＳＴＡ❁](https://t.me/Asta_Silva02) 」\n",
+            buttons=BUTTON,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
