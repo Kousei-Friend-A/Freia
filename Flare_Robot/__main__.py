@@ -87,7 +87,7 @@ PM_START_TEXT = """
 ➷ {} *users are Sexxy
 ❃⋆✦⋆──────────────⋆✦⋆❃
 
-➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/cc6b37f5c4b2e6a0d5254.jpg) ××
+➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/aaa94603e4c7a7bcb89f0.jpg) ××
 """
 
 
