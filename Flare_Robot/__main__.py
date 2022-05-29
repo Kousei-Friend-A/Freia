@@ -236,7 +236,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_animation(
+            update.effective_message.reply_photo(
                 FLARE_PHOTO,
                 PM_START_TEXT.format(
                     escape_markdown(context.bot.first_name),
@@ -250,7 +250,7 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_photo(
+        update.effective_message.reply_animation(
             FLARE_IMG,
             caption="<b>Oh! Darling I wont sleep until I satisfy you ;)!\nHaven't sleep since</b>: <code>{}</code>".format(
                 uptime
