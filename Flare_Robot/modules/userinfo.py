@@ -21,6 +21,7 @@ from telegram.utils.helpers import escape_markdown, mention_html
     
 
 import Flare_Robot.modules.sql.userinfo_sql as sql
+from Flare_Robot.events import register
 from Flare_Robot import (
     DEMONS,
     DEV_USERS,
