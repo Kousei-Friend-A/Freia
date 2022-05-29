@@ -484,11 +484,11 @@ BUTTON = [
 async def awake(event):
    TEXT = "*datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")"
    TEXT += f"*╒═══「 System statistics 」*\n\n"
-   TEXT += f"*➢ Python Version:* " + python_version() + "\n"
-   TEXT += f"*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n"
+   TEXT += f"*➢ Python Version:* " + python_version() + "\n "
+   TEXT += f"*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n "
    TEXT += f"\n*Bot statistics*:\n"
-   TEXT += f"\n".join([mod.__stats__() for mod in STATS])""
-   TEXT += f"╘══「 by [❁ＡＳＴＡ❁](https://t.me/Asta_Silva02) 」\n""
+   TEXT += f"\n".join([mod.__stats__() for mod in STATS])" "
+   TEXT += f"╘══「 by [❁ＡＳＴＡ❁](https://t.me/Asta_Silva02) 」\n"
 
    await FlareTelethonClient.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
             
