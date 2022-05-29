@@ -486,7 +486,6 @@ async def awake(event):
    TEXT += f"*➢ Python Version:* " + python_version() + "\n "
    TEXT += f"*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n "
    TEXT += f"\n*Bot statistics*:\n"
-   TEXT += f"\n".join([mod.__stats__() for mod in STATS])" "
    TEXT += f"╘══「 by [❁ＡＳＴＡ❁](https://t.me/Asta_Silva02) 」\n"
 
    await FlareTelethonClient.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
