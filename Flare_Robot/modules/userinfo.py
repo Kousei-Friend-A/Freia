@@ -451,21 +451,43 @@ def set_about_me(update: Update, context: CallbackContext):
             )
 
 
-@sudo_plus
-def stats(update: Update, context: CallbackContext):
-    process = subprocess.Popen(
-        "neofetch --stdout", shell=True, text=True, stdout=subprocess.PIPE
-    )
-    output = process.communicate()[0]
-    stats = (
-        "<b>Current stats:</b>\n"
-        + "\n"
-        + output
-        + "\n".join([mod.__stats__() for mod in STATS])
-    )
-    result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
+BUTTON = [
+        [
+            Button.url("📢 Updates", "https://t.me/Freia_Updates"),
+            Button.url("🚑 Support", "https://t.me/Freia_Support"),
+        ]
+    ]
 
+@sudo_plus
+def stats(update, context):
+    uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
+    status = "*╒═══「 System statistics 」*\n\n"
+    status += "*➢ Python Version:* " + python_version() + "\n"
+    status += "*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n"
+    status += "*➢ Uptime:* " + get_readable_time((time.time()-StartTime)) + "\n"
+    try:
+        update.effective_message.reply_text(
+            status
+            + "\n*Bot statistics*:\n"
+            + "\n".join([mod.__stats__() for mod in STATS])
+            + "╘══「 by [ᴀsᴛᴀ](https://t.me/Asta_Silva02) 」\n",
+            BUTTON,
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+        )
+    except BaseException:
+        update.effective_message.reply_text(
+                    (
+                        "\n*Bot statistics*:\n"
+                + "╘══「 by [ Ａ ｓ Ｔ ａ ](https://t.me/Asta_Silva02) 」\n"
+            ),
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+        )
+        
+        
+        
+        
 
 def about_bio(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
