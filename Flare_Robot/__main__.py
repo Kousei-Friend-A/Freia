@@ -76,6 +76,8 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+FLARE_PHOTO = "https://telegra.ph/file/28c847536559a3e529f11.jpg"
+
 
 PM_START_TEXT = """
 ────「 {} 」────
@@ -87,7 +89,7 @@ PM_START_TEXT = """
 ➷ {} *users are Sexxy
 ❃⋆✦⋆──────────────⋆✦⋆❃
 
-➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/28c847536559a3e529f11.jpg) ××
+➹ Try The Help Buttons Below To Know My Abilities ××
 """
 
 
@@ -234,7 +236,8 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
+            update.effective_message.reply_animation(
+                FLARE_PHOTO,
                 PM_START_TEXT.format(
                     escape_markdown(context.bot.first_name),
                     escape_markdown(first_name),
