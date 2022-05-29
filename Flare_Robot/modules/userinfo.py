@@ -480,38 +480,18 @@ BUTTON = [
     ]
 
 @sudo_plus
-def stats(update, context):
-    uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
-    status = "*╒═══「 System statistics 」*\n\n"
-    status += "*➢ Python Version:* " + python_version() + "\n"
-    status += "*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n"
-    try:
-        update.effective_message.reply_photo(
-            status
-            + "\n*Bot statistics*:\n"
-            + "\n".join([mod.__stats__() for mod in STATS])
-            + "╘══「 by [❁ＡＳＴＡ❁](https://t.me/Asta_Silva02) 」\n",
-            buttons=BUTTON,
-            PHOTO,
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-        )
-    except BaseException:
-        update.effective_message.reply_photo(
-                    (
-                        "\n*Bot statistics*:\n"
-                        + "\n".join(mod.__stats__() for mod in STATS)
-                    )
-                    
-                + "╘══「 by [Asta](https://t.me/Asta_Silva02) 」\n"
-            ),
-            buttons=BUTTON,
-            PHOTO,
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-        )
-        
-        
+@register(pattern=("/stats"))
+async def awake(event):
+   TEXT = *datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")"
+   TEXT += f"*╒═══「 System statistics 」*\n\n"
+   TEXT += f"*➢ Python Version:* " + python_version() + "\n"
+   TEXT += f"*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n"
+   TEXT += f"\n*Bot statistics*:\n"
+   TEXT += f"\n".join([mod.__stats__() for mod in STATS])"
+   TEXT += f"╘══「 by [❁ＡＳＴＡ❁](https://t.me/Asta_Silva02) 」\n"
+
+   await FlareTelethonClient.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
+     
         
         
         
