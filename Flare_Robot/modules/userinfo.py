@@ -497,13 +497,20 @@ def stats(update, context):
         )
     except BaseException:
         update.effective_message.reply_text(
+            (
                     (
                         "\n*Bot statistics*:\n"
-                + "╘══「 by [ Ａ ｓ Ｔ ａ ](https://t.me/Asta_Silva02) 」\n"
+                        + "\n".join(mod.__stats__() for mod in STATS)
+                    )
+                    
+                + "╘══「 by [Asta](https://t.me/Asta_Silva02) 」\n"
             ),
+            BUTTON,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
+        
+        
         
         
         
