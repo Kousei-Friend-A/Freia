@@ -482,8 +482,7 @@ BUTTON = [
 @sudo_plus
 @register(pattern=("/stats"))
 async def awake(event):
-   TEXT = "*datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")"
-   TEXT += f"*╒═══「 System statistics 」*\n\n"
+   TEXT = "*╒═══「 System statistics 」*\n\n"
    TEXT += f"*➢ Python Version:* " + python_version() + "\n "
    TEXT += f"*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n "
    TEXT += f"\n*Bot statistics*:\n"
