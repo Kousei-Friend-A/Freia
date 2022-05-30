@@ -522,8 +522,10 @@ def stats(update, context):
         update.effective_message.reply_text(
             (
                 (
+                    (
                         "\n*Bot Statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
+                    )
                 )
             ),
             reply_markup=InlineKeyboardMarkup(
@@ -656,7 +658,7 @@ Examples:
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio, run_async=True)
 GET_BIO_HANDLER = DisableAbleCommandHandler("bio", about_bio, run_async=True)
-
+STATS_HANDLER = DisableAbleCommandHandler("stats", stats, run_async=True)
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, run_async=True)
 GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid, run_async=True)
 INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info, run_async=True)
@@ -665,6 +667,7 @@ SET_ABOUT_HANDLER = DisableAbleCommandHandler("setme", set_about_me, run_async=T
 GET_ABOUT_HANDLER = DisableAbleCommandHandler("me", about_me, run_async=True)
 
 dispatcher.add_handler(ID_HANDLER)
+dispatcher.add_handler(STATS_HANDLER)
 dispatcher.add_handler(GIFID_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(SET_BIO_HANDLER)
@@ -682,4 +685,5 @@ __handlers__ = [
     GET_BIO_HANDLER,
     SET_ABOUT_HANDLER,
     GET_ABOUT_HANDLER,
+    STATS_HAMDLER,
 ]
