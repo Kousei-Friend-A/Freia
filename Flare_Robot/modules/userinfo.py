@@ -528,6 +528,16 @@ def stats(update, context):
                 )
                 + "╘══「 Made By [ᴀsᴛᴀ•°•](https://t.me/Asta_silva002) 」\n"
             ),
+            reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "SUPPORT", url="https://t.me/Kamadosupport"),
+                            InlineKeyboardButton(
+                                "UPDATES", url="https://t.me/Freia_Updates")
+                        ],
+                    ]
+                ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
