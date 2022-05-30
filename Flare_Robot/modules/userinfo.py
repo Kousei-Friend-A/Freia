@@ -490,7 +490,6 @@ def stats(update, context):
    await FlareTelethonClient.send_file(event.chat_id, 
                                        PHOTO,
                                        caption=status,
-                                       + "\n*Bot statistics*:\n",
                                        + "\n".join([mod.__stats__() for mod in STATS]),
                                        + "╘══「 by [ᴀsᴛᴀ](https://t.me/Asta_Silva02) 」\n",
                                        buttons=BUTTON)
