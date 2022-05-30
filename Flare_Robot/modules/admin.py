@@ -133,7 +133,7 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     bot.sendMessage(
         chat.id,
-         f"# SUCCESFULLY PROMOTED\n"
+         f"# SUCCESFULLY PROMOTED\n",
         reply_markup=InlineKeyboardMarkup(
                     [
                         [
