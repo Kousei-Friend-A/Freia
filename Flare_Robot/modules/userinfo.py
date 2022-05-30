@@ -486,12 +486,12 @@ def stats(update, context):
     status = "*╒═══「 System statistics 」*\n\n"
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n"
-
+    status += "\n".join([mod.__stats__() for mod in STATS]),
+    status += "╘══「 by [ᴀsᴛᴀ](https://t.me/Asta_Silva02) 」\n",
+                                    
    await FlareTelethonClient.send_file(event.chat_id, 
                                        PHOTO,
                                        caption=status,
-                                       + "\n".join([mod.__stats__() for mod in STATS]),
-                                       + "╘══「 by [ᴀsᴛᴀ](https://t.me/Asta_Silva02) 」\n",
                                        buttons=BUTTON)
             
 def about_bio(update: Update, context: CallbackContext):
