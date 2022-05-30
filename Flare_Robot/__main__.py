@@ -89,7 +89,7 @@ PM_START_TEXT = """
 ➷ {} *users are Sexxy
 ❃⋆✦⋆──────────────⋆✦⋆❃
 
-➹ Try The Help Buttons Below To Know My Abilities ××
+➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/aaa94603e4c7a7bcb89f0.jpg) ××
 """
 
 
@@ -236,8 +236,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
-                FLARE_PHOTO,
+            update.effective_message.reply_text(
                 PM_START_TEXT.format(
                     escape_markdown(context.bot.first_name),
                     escape_markdown(first_name),
