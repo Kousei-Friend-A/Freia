@@ -65,8 +65,8 @@ async def can_ban_users(message):
     )
 
 
-admin_ ="user.id, user.first_name"
-user_ ="user_member.user.id, user_member.user.first_name"
+admin_ ="https://t.me/user.id"
+user_ ="https://t.me/user_member.user.id"
 
 
 @connection_status
