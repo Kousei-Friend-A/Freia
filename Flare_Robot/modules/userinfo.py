@@ -489,8 +489,8 @@ def stats(update, context):
     try:
         update.effective_message.reply_text(
             status,
-            + "\n*Bot statistics*:\n",
-            + "\n".join([mod.__stats__() for mod in STATS]),
+             "\n*Bot statistics*:\n",
+             "\n".join([mod.__stats__() for mod in STATS]),
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -510,8 +510,8 @@ def stats(update, context):
                 (
                     (
                         status,
-                        + "\n*Bot Statistics*:\n"
-                        + "\n".join(mod.__stats__() for mod in STATS)
+                         "\n*Bot Statistics*:\n",
+                         "\n".join(mod.__stats__() for mod in STATS),
                     )
                 )
             ),
