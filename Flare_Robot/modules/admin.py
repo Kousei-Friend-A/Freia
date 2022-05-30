@@ -218,7 +218,8 @@ def midpromote(update: Update, context: CallbackContext) -> str:
     bot.sendMessage(
         chat.id,
          f"#MIDPROMOTED\n"
-       + f"     "
+       + f"
+"
        + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
        + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
         parse_mode=ParseMode.HTML,
