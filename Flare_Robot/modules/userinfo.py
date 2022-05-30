@@ -488,9 +488,7 @@ def stats(update, context):
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
     try:
         update.effective_message.reply_text(
-            status,
-             "\n*Bot statistics*:\n",
-             "\n".join([mod.__stats__() for mod in STATS]),
+            status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
