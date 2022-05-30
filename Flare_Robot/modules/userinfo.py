@@ -502,7 +502,7 @@ def stats(update, context):
     status += "*➢ Uptime:* " + str(botuptime) + "\n"
     try:
         update.effective_message.reply_text(
-            status
+            status,
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
             reply_markup=InlineKeyboardMarkup(
