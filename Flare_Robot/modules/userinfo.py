@@ -483,7 +483,6 @@ BUTTON = [
 @sudo_plus
 def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
-    botuptime = get_readable_time((time.time() - StartTime))
     status = "*╒═══「 System Statistics 」*\n\n"
     status += "*➢ System Start time:* " + str(uptime) + "\n"
     uname = platform.uname()
@@ -499,7 +498,6 @@ def stats(update, context):
     status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
-    status += "*➢ Uptime:* " + str(botuptime) + "\n"
     try:
         update.effective_message.reply_text(
             status,
