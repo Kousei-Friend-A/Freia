@@ -489,10 +489,7 @@ def stats(update, context):
     status += "\n".join([mod.__stats__() for mod in STATS]),
     status += "╘══「 by [ᴀsᴛᴀ](https://t.me/Asta_Silva02) 」\n",
                                     
-   await FlareTelethonClient.send_file(event.chat_id, 
-                                       PHOTO,
-                                       caption=status,
-                                       buttons=BUTTON)
+   await FlareTelethonClient.send_file(event.chat_id, PHOTO, caption=status, buttons=BUTTON)
             
 def about_bio(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
