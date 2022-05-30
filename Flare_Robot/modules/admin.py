@@ -64,8 +64,10 @@ async def can_ban_users(message):
         isinstance(p, types.ChannelParticipantAdmin) and p.admin_rights.ban_users
     )
 
+
 admin_ ="user.id, user.first_name"
 user_ ="user_member.user.id, user_member.user.first_name"
+
 
 @connection_status
 @bot_admin
