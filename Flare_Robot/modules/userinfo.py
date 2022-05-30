@@ -521,7 +521,8 @@ def stats(update, context):
             (
                 (
                     (
-                        "\n*Bot Statistics*:\n"
+                         status,
+                        + "\n*Bot Statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
                 )
