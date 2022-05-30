@@ -142,9 +142,9 @@ def promote(update: Update, context: CallbackContext) -> str:
                     [
                         [
                             InlineKeyboardButton(
-                                "BY ADMIN", url="admin_",
+                                "BY ADMIN", url="admin_"),
                             InlineKeyboardButton(
-                                "USER", url="user_"
+                                "USER", url="user_"),
                         ],
                     ]
                 ),
