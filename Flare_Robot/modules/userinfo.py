@@ -481,7 +481,8 @@ BUTTON = [
     ]
 
 @sudo_plus
-def stats(update, context):
+@register(pattern=("/stats"))
+async def awake(event):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
     status = "*╒═══「 System statistics 」*\n\n"
     status += "*➢ Python Version:* " + python_version() + "\n"
