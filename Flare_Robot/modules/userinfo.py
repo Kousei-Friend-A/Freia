@@ -505,7 +505,6 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + "╘══「 Made By [ᴀsᴛᴀ•°•](https://t.me/Asta_silva02) 」\n",
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -526,7 +525,6 @@ def stats(update, context):
                         "\n*Bot Statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                 )
-                + "╘══「 Made By [ᴀsᴛᴀ•°•](https://t.me/Asta_silva002) 」\n"
             ),
             reply_markup=InlineKeyboardMarkup(
                     [
