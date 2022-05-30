@@ -13,7 +13,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events, Button
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity, __version__ as ptbversion, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity, __version__ as ptbver, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
@@ -481,18 +481,57 @@ BUTTON = [
     ]
 
 @sudo_plus
-@register(pattern=("/stats"))
-async def awake(event):
+def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
-    status = "*╒═══「 System statistics 」*\n\n"
+    botuptime = get_readable_time((time.time() - StartTime))
+    status = "*╒═══「 System Statistics 」*\n\n"
+    status += "*➢ System Start time:* " + str(uptime) + "\n"
+    uname = platform.uname()
+    status += "*➢ System:* " + str(uname.system) + "\n"
+    status += "*➢ Node name:* " + escape_markdown(str(uname.node)) + "\n"
+    status += "*➢ Release:* " + escape_markdown(str(uname.release)) + "\n"
+    status += "*➢ Machine:* " + escape_markdown(str(uname.machine)) + "\n"
+    mem = virtual_memory()
+    cpu = cpu_percent()
+    disk = disk_usage("/")
+    status += "*➢ CPU:* " + str(cpu) + " %\n"
+    status += "*➢ RAM:* " + str(mem[2]) + " %\n"
+    status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
     status += "*➢ Python Version:* " + python_version() + "\n"
-    status += "*➢ python-Telegram-Bot:* " + str(ptbversion) + "\n"
-    status += "\n".join([mod.__stats__() for mod in STATS]),
-    status += "╘══「 by [ᴀsᴛᴀ](https://t.me/Asta_Silva02) 」\n",                                
-
-   await FlareTelethonClient.send_file(event.chat_id, PHOTO, caption=status, buttons=BUTTON)
-            
- 
+    status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
+    status += "*➢ Uptime:* " + str(botuptime) + "\n"
+    try:
+        update.effective_message.reply_text(
+            status
+            + "\n*Bot statistics*:\n"
+            + "\n".join([mod.__stats__() for mod in STATS])
+            + "╘══「 Made By [ᴀsᴛᴀ•°•](https://t.me/Asta_silva02) 」\n",
+            reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "SUPPORT", url="https://t.me/Kamadosupport"),
+                            InlineKeyboardButton(
+                                "UPDATES", url="https://t.me/Freia_Updates")
+                        ],
+                    ]
+                ),
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+        )
+    except BaseException:
+        update.effective_message.reply_text(
+            (
+                (
+                        "\n*Bot Statistics*:\n"
+                        + "\n".join(mod.__stats__() for mod in STATS)
+                )
+                + "╘══「 Made By [ᴀsᴛᴀ•°•](https://t.me/Asta_silva002) 」\n"
+            ),
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+        )
+        
            
 def about_bio(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
