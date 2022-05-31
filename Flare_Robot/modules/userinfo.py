@@ -280,8 +280,7 @@ def info(update: Update, context: CallbackContext):
         f"╔═━「<b> Appraisal results:</b> 」\n"
         f"✪ ID: <code>{user.id}</code>\n"
         f"✪ First Name: {html.escape(user.first_name)}"
-        f"✪ Mentioned : {mention_html(user_member.user.id, user_member.user.first_name)}"
-          )
+    )
 
     if user.last_name:
         text += f"\n✪ Last Name: {html.escape(user.last_name)}"
@@ -308,14 +307,14 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+        text += f"\n\n<b>◆Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
         spamwtc = sw.get_ban(int(user.id))
         if spamwtc:
-            text += "\n\n<b>This person is Spamwatched!</b>"
-            text += f"\nReason: <pre>{spamwtc.reason}</pre>"
-            text += "\nAppeal at @SpamWatchSupport"
+            text += "\n\n<b>•This person is Spamwatched!</b>"
+            text += f"\n•Reason: <pre>{spamwtc.reason}</pre>"
+            text += "\n•Appeal at @SpamWatchSupport"
     except:
         pass  # don't crash if api is down somehow...
 
