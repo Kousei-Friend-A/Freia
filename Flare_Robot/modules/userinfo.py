@@ -45,6 +45,7 @@ from Flare_Robot.modules.sql.users_sql import get_user_num_chats
 
 
 PHOTO= "https://telegra.ph/file/ad6084cb47b9c90fd10d6.jpg"
+
 def no_by_per(totalhp, percentage):
     """
     rtype: num of `percentage` from total
@@ -273,13 +274,14 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Getting info...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>Leaking The Data...</code>", parse_mode=ParseMode.HTML)
 
     text = (
         f"╔═━「<b> Appraisal results:</b> 」\n"
         f"✪ ID: <code>{user.id}</code>\n"
         f"✪ First Name: {html.escape(user.first_name)}"
-    )
+        f"✪ Mentioned : {mention_html(user_member.user.id, user_member.user.first_name)}
+          )
 
     if user.last_name:
         text += f"\n✪ Last Name: {html.escape(user.last_name)}"
@@ -320,25 +322,22 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person is my 'Keyaru sama'."
+        text += "\n\n🎭This person is my 'Keyaru sama'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is my 'Healing Hero'."
+        text += "\n\n🎗This user is my 'Healing Hero'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThis person is my 'Knight'."
+        text += "\n\n🎗This person is my 'Knight'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThis person is my 'Magic Hero'."
+        text += "\n\n🔪This person is my 'Magic Hero'."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nthis person is my 'Rifle Hero'."
+        text += "\n\n💀This person is my 'Rifle Hero'."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThis person is my 'Demi Human'."
-        disaster_level_present = True
-    elif user.id == 1635151800:
-        text += "\n\nMy owner @Ryu_God. My Darling."
+        text += "\n\n💀This person is my 'Demi Human'."
         disaster_level_present = True
 
     try:
@@ -350,7 +349,7 @@ def info(update: Update, context: CallbackContext):
             result = result.json()["result"]
             if "custom_title" in result.keys():
                 custom_title = result["custom_title"]
-                text += f"\n\nTitle:\n<b>{custom_title}</b>"
+                text += f"\n\n✾Title:\n<b>{custom_title}</b>"
     except BadRequest:
         pass
 
@@ -501,6 +500,7 @@ def stats(update, context):
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
     try:
         update.effective_message.reply_text(
+            PHOTO,
             status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
             reply_markup=InlineKeyboardMarkup(
                     [
@@ -520,6 +520,7 @@ def stats(update, context):
             (
                 (
                     (
+                        PHOTO,
                         status,
                          "\n*Bot Statistics*:\n",
                          "\n".join(mod.__stats__() for mod in STATS),
