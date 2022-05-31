@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 
 db = {}
 
-@bot.on(events.NewMessage(pattern="^[!?@/]Flare_Robot$"))
+@bot.on(events.NewMessage(pattern="^[!?@/]FlareXRobot$"))
 async def stsrt(event):
     await event.reply(
             "**Heya, I am a Whisper Bot function for Flare!**",
