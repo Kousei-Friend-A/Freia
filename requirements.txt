@@ -56,3 +56,4 @@ envparse
 geopy
 urllib3>=1.10
 speedtest-cli
+dateparser
