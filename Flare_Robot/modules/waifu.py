@@ -1,5 +1,5 @@
 import requests
-from telegram.constants import ParseMode
+from telegram import ParseMode
 
 from Flare_Robot.events import register as bot
 
