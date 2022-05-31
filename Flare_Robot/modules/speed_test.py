@@ -3,13 +3,19 @@ import os
 
 import speedtest
 import wget
-from pyrogram import filters
 
-from strings import get_command
+from pyrogram import filters
+from typing import List
 from Flare_Robot import pbot as app 
 
 
 SUDOERS = filters.user()
+
+commands = {}
+
+def get_command(value: str) -> List:
+    return commands["command"][value]
+
 
 # Commands
 SPEEDTEST_COMMAND = get_command("SPEEDTEST_COMMAND")
