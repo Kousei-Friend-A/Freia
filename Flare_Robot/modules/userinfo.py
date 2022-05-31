@@ -280,7 +280,7 @@ def info(update: Update, context: CallbackContext):
         f"╔═━「<b> Appraisal results:</b> 」\n"
         f"✪ ID: <code>{user.id}</code>\n"
         f"✪ First Name: {html.escape(user.first_name)}"
-        f"✪ Mentioned : {mention_html(user_member.user.id, user_member.user.first_name)}
+        f"✪ Mentioned : {mention_html(user_member.user.id, user_member.user.first_name)}"
           )
 
     if user.last_name:
