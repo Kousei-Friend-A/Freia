@@ -482,7 +482,7 @@ BUTTON = [
 @sudo_plus
 def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
-    status = "*╒═══「 System Statistics 」*\n\n"
+    status = "*╒═══「 System Statistics [」](https://telegra.ph/file/ad6084cb47b9c90fd10d6.jpg)*\n\n"
     status += "*➢ System Start time:* " + str(uptime) + "\n"
     uname = platform.uname()
     status += "*➢ System:* " + str(uname.system) + "\n"
@@ -498,8 +498,8 @@ def stats(update, context):
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
     try:
-        update.effective_message.reply_photo( 
-           PHOTO + status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
+        update.effective_message.reply_text( 
+           status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -511,13 +511,13 @@ def stats(update, context):
                     ]
                 ),
             parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
         )
     except BaseException:
-        update.effective_message.reply_photo(
+        update.effective_message.reply_text(
             (
                 (
                     (
-                        PHOTO,
                         status,
                          "\n*Bot Statistics*:\n",
                          "\n".join(mod.__stats__() for mod in STATS),
@@ -535,6 +535,7 @@ def stats(update, context):
                     ]
                 ),
             parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
         )
         
            
