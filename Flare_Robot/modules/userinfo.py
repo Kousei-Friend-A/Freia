@@ -498,8 +498,8 @@ def stats(update, context):
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
     try:
-        update.effective_message.reply_text(
-            PHOTO,
+        update.effective_message.reply_photo(
+            photo=open(f"{user.id}.jpg", "rb"),
             status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
             reply_markup=InlineKeyboardMarkup(
                     [
