@@ -499,7 +499,7 @@ def stats(update, context):
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
     try:
         update.effective_message.reply_photo(
-            photo=open(f"{user.id}.jpg", "rb"),
+            PHOTO=open(f"{user.id}.jpg", "rb"),
             status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
             reply_markup=InlineKeyboardMarkup(
                     [
@@ -515,11 +515,11 @@ def stats(update, context):
             disable_web_page_preview=True,
         )
     except BaseException:
-        update.effective_message.reply_text(
+        update.effective_message.reply_photo(
             (
                 (
                     (
-                        PHOTO,
+                        PHOTO=open(f"{user.id}.jpg", "rb"),
                         status,
                          "\n*Bot Statistics*:\n",
                          "\n".join(mod.__stats__() for mod in STATS),
