@@ -24,7 +24,7 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 
 import Flare_Robot.modules.sql.users_sql as sql
-from Flare_Robot.__help__.py import (
+from Flare_Robot.__help__ import (
     send_help,
     help_button,
     help_button
