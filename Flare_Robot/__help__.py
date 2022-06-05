@@ -8,9 +8,9 @@ from telegram.ext import CallbackContext
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 
-from Shasa import ALLOW_EXCL, HELP_IMG, LOGGER, dispatcher
-from Shasa.Handlers.chat_status import is_user_admin
-from Shasa.Handlers.misc import paginate_modules
+from Flare_Robot import ALLOW_EXCL, HELP_IMG, LOGGER, dispatcher
+from Flare_Robot.modules.helper_funcs.chat_status import is_user_admin
+from Flare_Robot.modules.helper_funcs.misc import paginate_modules
 
 HELP_STRINGS = """Hey there! My name is *{}*.
 I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of the things I can help you with. """.format(
