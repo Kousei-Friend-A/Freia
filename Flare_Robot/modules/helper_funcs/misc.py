@@ -104,9 +104,9 @@ def build_keyboard(buttons):
 
 def revert_buttons(buttons):
     return "".join(
-        "\n[{}](buttonurl://{}:same)".format(btn.name, btn.url)
+        f"\n[{btn.name}](buttonurl://{btn.url}:same)"
         if btn.same_line
-        else "\n[{}](buttonurl://{})".format(btn.name, btn.url)
+        else f"\n[{btn.name}](buttonurl://{btn.url})"
         for btn in buttons
     )
 
