@@ -8,7 +8,7 @@ from telegram.ext import CallbackContext
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 
-from Flare_Robot import ALLOW_EXCL, HELP_IMG, LOGGER, dispatcher
+from Flare_Robot import ALLOW_EXCL, LOGGER, dispatcher
 from Flare_Robot.modules.helper_funcs.chat_status import is_user_admin
 from Flare_Robot.modules.helper_funcs.misc import paginate_modules
 
@@ -36,6 +36,7 @@ USER_SETTINGS = {}
 
 import os
 
+HELP_IMG ="https://telegra.ph/file/9194501248e170f6cdd00.jpg"
 HELP_MSG = "Click the button below to get help manu in your pm."
 
 path = r"Shasa/Plugins/"
