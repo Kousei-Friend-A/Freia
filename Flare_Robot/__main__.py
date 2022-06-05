@@ -17,7 +17,7 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from Shasa import (
+from Flare_Robot import (
     CERT_PATH,
     LOGGER,
     OWNER_USERNAME,
@@ -33,7 +33,7 @@ from Shasa import (
     ubot,
     updater,
 )
-from Shasa.__help__ import (
+from Flare_Robot.__help__ import (
     ADMIN,
     HELP_STRINGS,
     HELPABLE,
@@ -53,8 +53,8 @@ from Shasa.__help__ import (
     tools_help_button,
     user_help_button,
 )
-from Shasa.Handlers.chat_status import is_user_admin
-from Shasa.Plugins import ALL_MODULES
+from Flare_Robot.Handlers.chat_status import is_user_admin
+from Flare_Robot.Plugins import ALL_MODULES
 
 PHOTO = "https://telegra.ph/file/a9081153e63c9e2363bd2.jpg"
 
