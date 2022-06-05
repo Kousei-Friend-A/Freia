@@ -53,8 +53,8 @@ from Flare_Robot.__help__ import (
     tools_help_button,
     user_help_button,
 )
-from Flare_Robot.Handlers.chat_status import is_user_admin
-from Flare_Robot.Plugins import ALL_MODULES
+from Flare_Robot.modules.helper_funcs.chat_status import is_user_admin
+from Flare_Robot.modules import ALL_MODULES
 
 PHOTO = "https://telegra.ph/file/a9081153e63c9e2363bd2.jpg"
 
