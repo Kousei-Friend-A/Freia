@@ -181,7 +181,7 @@ WAIFUS_PIC = (
 
 def shorten(description, info="anilist.co"):
     msg = ""
-'    if len(description) > 700:
+    if len(description) > 700:
         description = description[0:500] + "...."
         msg += f"\n*Description*: {description}[Read More]({info})"
     else:
