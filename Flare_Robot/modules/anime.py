@@ -146,28 +146,6 @@ WAIFUS_PIC = (
     "Ririna Sanada",
     "Misaki Takasaki",
     "Elizabeth Liones",
-    "Gokou Ruri"
-    "Hanekawa Tsubasa"
-    "Aqua",
-    "Esdeath",
-    "Katou Megumi",
-    "Tomori Nao",
-    "Osaki Nana",
-    "Ryougi Shiki",
-    "Blouse Sasha",
-    "Chitanda Eru",
-    "Kugisaki Nobara",
-    "Yuigahama Yui",
-    "Kuriyama Mirai",
-    "Kuroki Tomoko",
-    "Makima",
-    "Hayasaka Ai",
-    "Heartfilia Lucy",
-    "Miyamizu Mitsuha",
-    "Hiiragi Shinoa",
-    "Misaki Mei",
-    "Yona",
-    "Iino Miko",
 )
 
 def shorten(description, info="anilist.co"):
