@@ -146,6 +146,7 @@ WAIFUS_PIC = (
     "Ririna Sanada",
     "Misaki Takasaki",
     "Elizabeth Liones",
+    "Kugisaki Nobara",
 )
 
 def shorten(description, info="anilist.co"):
