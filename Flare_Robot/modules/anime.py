@@ -136,6 +136,7 @@ WAIFUS_PIC = (
     "Gabi",
     "Mikasa",
     "Komi",
+    "Flare Arlgrande",
 )
 
 def shorten(description, info="anilist.co"):
