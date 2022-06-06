@@ -137,10 +137,6 @@ WAIFUS_PIC = (
     "Mikasa",
     "Komi",
     "Flare Arlgrande",
-    "Genshin",
-    "Chutki",
-    "Indumati",
-    "shizuka",
     "Annie Leonhart"
     "Ayane Shirakawa",
     "Ai Hayasaka",
@@ -149,8 +145,6 @@ WAIFUS_PIC = (
     "Yor Forger",
     "Ririna Sanada",
     "Misaki Takasaki",
-    "Ellis Meteor",
-    "Lydia Beginsgate",
     "Elizabeth Liones",
     "Gokou Ruri"
     "Hanekawa Tsubasa"
