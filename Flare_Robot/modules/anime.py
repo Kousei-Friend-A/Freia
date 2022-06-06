@@ -142,7 +142,6 @@ WAIFUS_PIC = (
     "Indumati",
     "shizuka",
     "Annie Leonhart"
-    "Rhantolk   Ytri Historia",
     "Ayane Shirakawa",
     "Ai Hayasaka",
     "Hwaryun",
@@ -150,9 +149,7 @@ WAIFUS_PIC = (
     "Yor Forger",
     "Ririna Sanada",
     "Misaki Takasaki",
-    "Ginny Fin de Salvan",
     "Ellis Meteor",
-    "Ireena Litz de Olhyde",
     "Lydia Beginsgate",
     "Elizabeth Liones",
     "Gokou Ruri"
