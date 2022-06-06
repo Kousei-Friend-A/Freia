@@ -137,11 +137,51 @@ WAIFUS_PIC = (
     "Mikasa",
     "Komi",
     "Flare Arlgrande",
+    "Genshin",
+    "Chutki",
+    "Indumati",
+    "shizuka",
+    "Annie Leonhart"
+    "Rhantolk   Ytri Historia",
+    "Ayane Shirakawa",
+    "Ai Hayasaka",
+    "Hwaryun",
+    "Anya Forger",
+    "Yor Forger",
+    "Ririna Sanada",
+    "Misaki Takasaki",
+    "Ginny Fin de Salvan",
+    "Ellis Meteor",
+    "Ireena Litz de Olhyde",
+    "Lydia Beginsgate",
+    "Elizabeth Liones",
+    "Gokou Ruri"
+    "Hanekawa Tsubasa"
+    "Aqua",
+    "Esdeath",
+    "Katou Megumi",
+    "Tomori Nao",
+    "Osaki Nana",
+    "Ryougi Shiki",
+    "Blouse Sasha",
+    "Chitanda Eru",
+    "Kugisaki Nobara",
+    "Yuigahama Yui",
+    "Kuriyama Mirai",
+    "Kuroki Tomoko",
+    "Makima",
+    "Hayasaka Ai",
+    "Heartfilia Lucy",
+    "Miyamizu Mitsuha",
+    "Hiiragi Shinoa",
+    "Misaki Mei",
+    "Yona",
+    "Iino Miko",
 )
 
 def shorten(description, info="anilist.co"):
     msg = ""
-    if len(description) > 700:
+'    if len(description) > 700:
         description = description[0:500] + "...."
         msg += f"\n*Description*: {description}[Read More]({info})"
     else:
