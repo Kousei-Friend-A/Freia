@@ -480,74 +480,6 @@ BUTTON = [
     ]
 
 
-@sudo_plus
-def stats(update, context):
-    uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
-    status = "*╒═══「 System Statistics 」*\n\n"
-    status += "*➢ System Start time:* " + str(uptime) + "\n"
-    uname = platform.uname()
-    status += "*➢ System:* " + str(uname.system) + "\n"
-    status += "*➢ Node name:* " + escape_markdown(str(uname.node)) + "\n"
-    status += "*➢ Release:* " + escape_markdown(str(uname.release)) + "\n"
-    status += "*➢ Machine:* " + escape_markdown(str(uname.machine)) + "\n"
-    mem = virtual_memory()
-    cpu = cpu_percent()
-    disk = disk_usage("/")
-    status += "*➢ CPU:* " + str(cpu) + " %\n"
-    status += "*➢ RAM:* " + str(mem[2]) + " %\n"
-    status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
-    status += "*➢ Python Version:* " + python_version() + "\n"
-    status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
-    try:
-        update.effective_message.reply_photo( 
-           PHOTO + status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
-            reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "SUPPORT", url="https://t.me/Kamadosupport"),
-                            InlineKeyboardButton(
-                                "UPDATES", url="https://t.me/Freia_Updates")
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                "◆|Owner|◆", url="https://t.me/Asta_Silva002")
-                        ],  
-                    ]
-                ),
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-        )
-    except BaseException:
-        update.effective_message.reply_photo(
-            (
-                (
-                    (
-                         PHOTO + status,
-                         "\n*Bot Statistics*:\n",
-                         "\n".join(mod.__stats__() for mod in STATS),
-                    )
-                )
-            ),
-            reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "SUPPORT", url="https://t.me/Kamadosupport"),
-                            InlineKeyboardButton(
-                                "UPDATES", url="https://t.me/Freia_Updates")
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                "◆|Owner|◆", url="https://t.me/Asta_Silva002")
-                        ],
-                    ]
-                ),
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-        )
-        
-           
 def about_bio(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -663,7 +595,6 @@ Examples:
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio, run_async=True)
 GET_BIO_HANDLER = DisableAbleCommandHandler("bio", about_bio, run_async=True)
-STATS_HANDLER = DisableAbleCommandHandler("stats", stats, run_async=True)
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, run_async=True)
 GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid, run_async=True)
 INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info, run_async=True)
@@ -672,7 +603,6 @@ SET_ABOUT_HANDLER = DisableAbleCommandHandler("setme", set_about_me, run_async=T
 GET_ABOUT_HANDLER = DisableAbleCommandHandler("me", about_me, run_async=True)
 
 dispatcher.add_handler(ID_HANDLER)
-dispatcher.add_handler(STATS_HANDLER)
 dispatcher.add_handler(GIFID_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(SET_BIO_HANDLER)
@@ -690,5 +620,4 @@ __handlers__ = [
     GET_BIO_HANDLER,
     SET_ABOUT_HANDLER,
     GET_ABOUT_HANDLER,
-    STATS_HANDLER,
 ]
