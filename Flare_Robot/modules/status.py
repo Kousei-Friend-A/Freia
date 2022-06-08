@@ -65,8 +65,6 @@ async def awake(event):
     status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
-    status += "\n*Bot statistics*:\n"
-    status += "("\n".join([mod.__stats__() for mod in STATS]))"
     BUTTON = [
         [
             Button.url("📢 Updates", "https://t.me/Freia_Updates"),
@@ -74,6 +72,6 @@ async def awake(event):
             Button.url("◆|Owner|◆", "https://t.me/Asta_silva002"),
         ]
     ]
-    await tbot.send_file(event.chat_id, PHOTO, caption=status, buttons=BUTTON)
+    await tbot.send_file(event.chat_id, PHOTO, caption=status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]), buttons=BUTTON)
 
         
