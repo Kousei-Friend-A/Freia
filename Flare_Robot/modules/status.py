@@ -47,7 +47,7 @@ from Flare_Robot.modules.sql.users_sql import get_user_num_chats
 PHOTO= "https://telegra.ph/file/ad6084cb47b9c90fd10d6.jpg"
 
 
-@register(pattern=("/alive"))
+@register(pattern=("/status"))
 async def awake(event):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
     status = "*╒═══「 System Statistics 」*\n\n"
