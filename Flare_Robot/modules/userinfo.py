@@ -7,13 +7,10 @@ import platform
 import time
 import subprocess
 
-from psutil import cpu_percent, virtual_memory, disk_usage, boot_time
-from platform import python_version
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-from telethon import events, Button
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity, __version__ as ptbver, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
@@ -44,7 +41,6 @@ from Flare_Robot.modules.sql.global_bans_sql import is_user_gbanned
 from Flare_Robot.modules.sql.users_sql import get_user_num_chats
 
 
-PHOTO= "https://telegra.ph/file/ad6084cb47b9c90fd10d6.jpg"
 
 def no_by_per(totalhp, percentage):
     """
@@ -470,14 +466,6 @@ def set_about_me(update: Update, context: CallbackContext):
                     MAX_MESSAGE_LENGTH // 4, len(info[1])
                 )
             )
-
-
-BUTTON = [
-        [
-            Button.url("📢 Updates", "https://t.me/Freia_Updates"),
-            Button.url("🚑 Support", "https://t.me/Freia_Support"),
-        ]
-    ]
 
 
 def about_bio(update: Update, context: CallbackContext):
