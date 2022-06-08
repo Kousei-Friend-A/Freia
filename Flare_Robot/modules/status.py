@@ -69,7 +69,7 @@ async def awake(event):
         [
             Button.url("📢 Updates", "https://t.me/Freia_Updates"),
             Button.url("🚑 Support", "https://t.me/KamadoSupport"),
-        ]
+        ],
         [   Button.url("◆|Owner|◆", " https://t.me/Asta_silva002"),
         ]
     ]
