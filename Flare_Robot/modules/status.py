@@ -17,15 +17,11 @@ import subprocess
 
 from psutil import cpu_percent, virtual_memory, disk_usage, boot_time
 from platform import python_version
-from telethon.tl.functions.channels import GetFullChannelRequest
-from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events, Button
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity, __version__ as ptbver, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import __version__ as ptbver
 from telegram.ext import CallbackContext, CommandHandler
-from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
-from telegram.utils.helpers import escape_markdown, mention_html
     
 
 import Flare_Robot.modules.sql.userinfo_sql as sql
@@ -50,18 +46,20 @@ PHOTO= "https://telegra.ph/file/ad6084cb47b9c90fd10d6.jpg"
 @register(pattern=("/status"))
 async def awake(event):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
-    status = "*╒═══「 System Statistics 」*\n\n"
-    status += "*➢ System Start time:* " + str(uptime) + "\n"
+    status = "╒═══「 System Statistics 」\n\n"
+    status += "➢ System Start time: " + str(uptime) + "\n"
     uname = platform.uname()
-    status += "*➢ Python Version:* " + python_version() + "\n"
-    status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
+    status += "➢ Python Version: " + python_version() + "\n"
+    status += "➢ python-Telegram-Bot: " + str(ptbver) + "\n"
     BUTTON = [
         [
             Button.url("📢 Updates", "https://t.me/Freia_Updates"),
             Button.url("🚑 Support", "https://t.me/KamadoSupport"),
+        ],
+        [
             Button.url("◆|Owner|◆", "https://t.me/Asta_silva002"),
         ]
     ]
-    await tbot.send_file(event.chat_id, PHOTO, caption=status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]), buttons=BUTTON)
+    await tbot.send_file(event.chat_id, PHOTO, caption=status + "\nBot statistics:\n" + "\n".join([mod.__stats__() for mod in STATS]), buttons=BUTTON)
 
         
