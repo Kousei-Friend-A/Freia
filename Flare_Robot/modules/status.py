@@ -69,8 +69,7 @@ async def awake(event):
         [
             Button.url("📢 Updates", "https://t.me/Freia_Updates"),
             Button.url("🚑 Support", "https://t.me/KamadoSupport"),
-        ],
-        [   Button.url("◆|Owner|◆", " https://t.me/Asta_silva002"),
+            Button.url("◆|Owner|◆", " https://t.me/Asta_silva002"),
         ]
     ]
     await tbot.send_file(event.chat_id, PHOTO, caption=status, buttons=BUTTON)
