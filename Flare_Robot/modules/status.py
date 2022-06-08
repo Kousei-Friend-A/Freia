@@ -37,7 +37,7 @@ from Flare_Robot.modules.helper_funcs.chat_status import sudo_plus
 
 PHOTO= "https://telegra.ph/file/ad6084cb47b9c90fd10d6.jpg"
 
-@sudoplus
+@sudo_plus
 @register(pattern=("/status"))
 async def awake(event):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
