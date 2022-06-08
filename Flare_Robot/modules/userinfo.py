@@ -508,6 +508,10 @@ def stats(update, context):
                             InlineKeyboardButton(
                                 "UPDATES", url="https://t.me/Freia_Updates")
                         ],
+                        [
+                            InlineKeyboardButton(
+                                "◆|Owner|◆", url="https://t.me/Asta_Silva002")
+                        ],  
                     ]
                 ),
             parse_mode=ParseMode.MARKDOWN,
