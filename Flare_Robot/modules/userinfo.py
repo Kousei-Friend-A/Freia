@@ -479,6 +479,7 @@ BUTTON = [
         ]
     ]
 
+
 @sudo_plus
 def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
@@ -498,8 +499,8 @@ def stats(update, context):
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
     try:
-        update.effective_message.reply_text( 
-           status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
+        update.effective_message.reply_photo( 
+           PHOTO + status + "\n*Bot statistics*:\n" + "\n".join([mod.__stats__() for mod in STATS]),
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -518,11 +519,11 @@ def stats(update, context):
             disable_web_page_preview=True,
         )
     except BaseException:
-        update.effective_message.reply_text(
+        update.effective_message.reply_photo(
             (
                 (
                     (
-                        status,
+                         PHOTO + status,
                          "\n*Bot Statistics*:\n",
                          "\n".join(mod.__stats__() for mod in STATS),
                     )
