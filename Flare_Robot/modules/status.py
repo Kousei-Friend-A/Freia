@@ -30,19 +30,14 @@ from Flare_Robot import (
     dispatcher,
     StartTime
 )
-from Flare_Robot import telethn as FlareTelethonClient
 from Flare_Robot.__main__ import STATS, TOKEN, USER_INFO
 from Flare_Robot.modules.disable import DisableAbleCommandHandler
 from Flare_Robot.modules.helper_funcs.chat_status import sudo_plus
-from Flare_Robot.modules.helper_funcs.extraction import extract_user
-from Flare_Robot.modules.sql.afk_sql import check_afk_status, is_afk
-from Flare_Robot.modules.sql.global_bans_sql import is_user_gbanned
-from Flare_Robot.modules.sql.users_sql import get_user_num_chats
 
 
 PHOTO= "https://telegra.ph/file/ad6084cb47b9c90fd10d6.jpg"
 
-
+@sudoplus
 @register(pattern=("/status"))
 async def awake(event):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
