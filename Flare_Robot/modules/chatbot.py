@@ -3,7 +3,7 @@ import re
 import os
 import html
 import requests
-import SiestaRobot.modules.sql.chatbot_sql as sql
+import Flare_Robot.modules.sql.chatbot_sql as sql
 
 from time import sleep
 from telegram import ParseMode
