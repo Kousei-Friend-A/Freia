@@ -66,7 +66,7 @@ async def awake(event):
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
     status += "\n*Bot statistics*:\n"
-    status += ""\n".join([mod.__stats__() for mod in STATS])"
+    status += "("\n".join([mod.__stats__() for mod in STATS]))"
     BUTTON = [
         [
             Button.url("📢 Updates", "https://t.me/Freia_Updates"),
