@@ -65,7 +65,6 @@ async def awake(event):
     status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
     status += "*➢ Python Version:* " + python_version() + "\n"
     status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
- 
     BUTTON = [
         [
             Button.url("📢 Updates", "https://t.me/Freia_Updates"),
