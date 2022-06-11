@@ -10,7 +10,6 @@ from Flare_Robot.modules.disable import DisableAbleCommandHandler
 # Wallpapers module by @TheRealPhoenix using wall.alphacoders.com
 
 
-@run_async
 def wall(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     msg = update.effective_message
