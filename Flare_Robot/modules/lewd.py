@@ -767,8 +767,6 @@ __handlers__ = [
 ]
 
 __help__ = """
-Module credits`*:*[Dank-del](https://github.com/Dank-del/Chizuru/) ,
-Also thanks to [EverythingSuckz](https://t.me/EverythingSuckz) for NSFW filter.
   
  
 *Commands* `*:*  
