@@ -87,7 +87,7 @@ PM_START_TEXT = """
 ➷ *Uptime:* {}
 ➷ {} *users are Sexxy
 ❃⋆✦⋆──────────────⋆✦⋆❃
-➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/aaa94603e4c7a7bcb89f0.jpg) ××
+➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/e553ffc8f91890451f2a3.jpg) ××
 """
 
 
