@@ -1,36 +1,35 @@
-import random
 import re
+import random
 from html import escape
-
 import telegram
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Message, ParseMode
+from telegram import ParseMode, InlineKeyboardMarkup, Message, InlineKeyboardButton
 from telegram.error import BadRequest
 from telegram.ext import (
-    CallbackQueryHandler,
     CommandHandler,
-    DispatcherHandlerStop,
-    Filters,
     MessageHandler,
+    DispatcherHandlerStop,
+    CallbackQueryHandler,
+    run_async,
+    Filters,
 )
-from telegram.utils.helpers import escape_markdown, mention_html
-
-from Flare_Robot import DRAGONS, LOGGER, dispatcher
-from Flare_Robot.modules.connection import connected
+from telegram.utils.helpers import mention_html, escape_markdown
+from Flare_Robot import dispatcher, LOGGER, DRAGONS
 from Flare_Robot.modules.disable import DisableAbleCommandHandler
-from Flare_Robot.modules.helper_funcs.alternate import send_message, typing_action
+from Flare_Robot.modules.helper_funcs.handlers import MessageHandlerChecker
 from Flare_Robot.modules.helper_funcs.chat_status import user_admin
 from Flare_Robot.modules.helper_funcs.extraction import extract_text
 from Flare_Robot.modules.helper_funcs.filters import CustomFilters
-from Flare_Robot.modules.helper_funcs.handlers import MessageHandlerChecker
 from Flare_Robot.modules.helper_funcs.misc import build_keyboard_parser
 from Flare_Robot.modules.helper_funcs.msg_types import get_filter_type
 from Flare_Robot.modules.helper_funcs.string_handling import (
+    split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
-    split_quotes,
 )
 from Flare_Robot.modules.sql import cust_filters_sql as sql
+from Flare_Robot.modules.connection import connected
+from Flare_Robot.modules.helper_funcs.alternate import send_message, typing_action
 
 HANDLER_GROUP = 10
 
@@ -75,7 +74,7 @@ def list_handlers(update, context):
         return
 
     for keyword in all_handlers:
-        entry = " • `{}`\n".format(escape_markdown(keyword))
+        entry = " â€¢ `{}`\n".format(escape_markdown(keyword))
         if len(entry) + len(filter_list) > telegram.MAX_MESSAGE_LENGTH:
             send_message(
                 update.effective_message,
@@ -401,20 +400,21 @@ def reply_filter(update, context):
                                     "Failed to send message: " + excp.message
                                 )
                 else:
-                    try:
+                    if ENUM_FUNC_MAP[filt.file_type] == dispatcher.bot.send_sticker:
+                        ENUM_FUNC_MAP[filt.file_type](
+                            chat.id,
+                            filt.file_id,
+                            reply_to_message_id=message.message_id,
+                            reply_markup=keyboard,
+                        )
+                    else:
                         ENUM_FUNC_MAP[filt.file_type](
                             chat.id,
                             filt.file_id,
                             caption=markdown_to_html(filtext),
                             reply_to_message_id=message.message_id,
                             parse_mode=ParseMode.HTML,
-                            disable_web_page_preview=True,
                             reply_markup=keyboard,
-                        )
-                    except BadRequest:
-                        send_message(
-                            message,
-                            "I don't have the permission to send the content of the filter.",
                         )
                 break
             else:
@@ -582,7 +582,7 @@ def addnew_filter(update, chat_id, keyword, text, file_type, file_id, buttons):
 
 
 def __stats__():
-    return "• {} filters, across {} chats.".format(sql.num_filters(), sql.num_chats())
+    return "â€¢ {} filters, across {} chats.".format(sql.num_filters(), sql.num_chats())
 
 
 def __import_data__(chat_id, data):
@@ -602,10 +602,9 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- • `/filters`*:* List all active filters saved in the chat.
-
+ â /filters*:* List all active filters saved in the chat.
 *Admin only:*
- • `/filter <keyword> <reply message>`*:* Add a filter to this chat. The bot will now reply that message whenever 'keyword'\
+ â /filter <keyword> <reply message>*:* Add a filter to this chat. The bot will now reply that message whenever 'keyword'\
 is mentioned. If you reply to a sticker with a keyword, the bot will reply with that sticker. NOTE: all filter \
 keywords are in lowercase. If you want your keyword to be a sentence, use quotes. eg: /filter "hey there" How you \
 doin?
@@ -617,20 +616,17 @@ doin?
  Reply 2
  %%%
  Reply 3`
- • `/stop <filter keyword>`*:* Stop that filter.
-
+ â /stop <filter keyword>*:* Stop that filter.
 *Chat creator only:*
- • `/removeallfilters`*:* Remove all chat filters at once.
-
+ â /removeallfilters*:* Remove all chat filters at once.
 *Note*: Filters also support markdown formatters like: {first}, {last} etc.. and buttons.
-Check `/markdownhelp` to know more!
-
+Check â /markdownhelp to know more!
 """
 
 __mod_name__ = "Filters"
 
-FILTER_HANDLER = CommandHandler("filter", filters, run_async=True)
-STOP_HANDLER = CommandHandler("stop", stop_filter, run_async=True)
+FILTER_HANDLER = CommandHandler("filter", filters)
+STOP_HANDLER = CommandHandler("stop", stop_filter)
 RMALLFILTER_HANDLER = CommandHandler(
     "removeallfilters", rmall_filters, filters=Filters.chat_type.groups, run_async=True
 )
@@ -659,3 +655,4 @@ __handlers__ = [
     LIST_HANDLER,
     (CUST_FILTER_HANDLER, HANDLER_GROUP, RMALLFILTER_HANDLER),
 ]
+`
