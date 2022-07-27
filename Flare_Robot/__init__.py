@@ -242,6 +242,7 @@ print("TELETHON CLIENT STARTING")
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 updater = tg.Updater(
     TOKEN,
+    use_context=True,
     workers=min(32, os.cpu_count() + 4),
     request_kwargs={"read_timeout": 10, "connect_timeout": 10},
 )
