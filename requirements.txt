@@ -13,7 +13,7 @@ hurry.filesize
 nekos.py==1.0.3
 html2text
 jikanpy==4.3.2
-lxml==4.7.1
+lxml>=4.9.1
 markdown2==2.4.2
 multicolorcaptcha==1.2.0
 pillow==9.0.1
@@ -31,7 +31,7 @@ spamwatch==0.3.0
 SQLAlchemy==1.4.35
 telethon==1.24.0
 telegraph==2.1.0
-ujson==5.2.0
+ujson>=5.4.0
 wget
 wikipedia==1.4.0
 httpx
