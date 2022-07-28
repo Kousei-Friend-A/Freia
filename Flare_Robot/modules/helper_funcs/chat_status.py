@@ -426,6 +426,7 @@ def connection_status(func):
             update,
             update.effective_chat,
             update.effective_user.id,
+            null=True,
             need_admin=False,
         )
 
