@@ -107,7 +107,7 @@
       "DATABASE_URL": {
          "description": "Add your Db_URI.",
          "required": true,
-         "value": "postgresql://qzjdsqfv:4FqGkkMd5cTapST-n2N7kZ5Uct1hBCB1@castor.db.elephantsql.com/qzjdsqfv"
+         "value": ""
       },
       "WOLVES": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
@@ -169,12 +169,12 @@
        "MONGO_DB_URI": {
          "description": "Your Mongo Database Url, create it from https://cloud.mongodb.com/",
          "required": true,
-         "value": "mongodb+srv://Flare_DB:FreiaDb@flaredb.mqysn.mongodb.net/FlareDb?retryWrites=true&w=majority"
+         "value": ""
        }, 
        "REDIS_URI": {
          "description": "Redis Url create one from redislabs.com.",
          "required": true,
-         "value": "redis://Asta:Asta_123@redis-11259.c277.us-east-1-3.ec2.cloud.redislabs.com:11259/Asta"
+         "value": ""
        }, 
        "APP_ID": {
          "description": "API ID of 2nd telegram account if you dont have two accounts then use the same accounts API ID, but i recommend using 2nd accounts API ID",
@@ -189,7 +189,7 @@
        "STRING_SESSION": {
          "description": "Telethon String Session, create it from https://repl.it/@SpEcHiDe/GenerateStringSession .",
          "required": true,
-         "value": "1BVtsOI4Bu1fkLLFpERy0FXTn5S8kaHYpnGoRTBnUQABJAPMJAKq6GBXUOXGinjZH76K3tI1Wcjj3pMLgW-TTHNSBB1CesvuMdSB-Q42vnLt-EtkX3JvopVAQxl89F24XGM5ET_d0pdttCU4Bjl1iBgNDbx5yp3XtZe4fXSs67zvDRslc9MFSktzqobscrkkSws4lTK9LYHThV8pMMSO9TRmugUqpOX6gQvdWXP4XX98skvMy7iN0arx91MU1pdybY4ppH1my5NEcofArXkyU9dLV5bt297q5VEdxDJvt5MSIaL_m3kN2TRVfZkF0AMqMY5R9XJnALSkw2Kaufowb55TgfVtGZWs="
+         "value": ""
       }
       
    }
