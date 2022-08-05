@@ -87,7 +87,7 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     DB_URL = os.environ.get(
         "DATABSE_URL",
-        "postgresql://qzjdsqfv:4FqGkkMd5cTapST-n2N7kZ5Uct1hBCB1@castor.db.elephantsql.com/qzjdsqfv",
+        None
     )
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
@@ -108,7 +108,7 @@ if ENV:
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     REDIS_URL = os.environ.get(
         "REDIS_URL",
-        "redis://Asta:Asta_123@redis-11259.c277.us-east-1-3.ec2.cloud.redislabs.com:11259/Asta",
+        None
     )
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
