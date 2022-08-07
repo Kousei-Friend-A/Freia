@@ -95,17 +95,17 @@ buttons = [
     [
         InlineKeyboardButton(
             text=f"Add Gojo To Your Group",
-            url=f"t.me/SatoruGojoXRobot?startgroup=true",
+            url=f"t.me/SatoruXRobot?startgroup=true",
         )
     ],
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
         InlineKeyboardButton(text="🌎Discussion Group", url="https://t.me/weebs_association"),
-        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Gladius_Sama"),
+        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/GladiusSama"),
     ],
     [
-        InlineKeyboardButton(text="🚑Support", url=f"https://t.me/Infinity_Support"),
-        InlineKeyboardButton(text="📡Updates", url="https://t.me/Infinite_Updates"),
+        InlineKeyboardButton(text="🚑Support", url=f"https://t.me/InfinitySupportX"),
+        InlineKeyboardButton(text="📡Updates", url="https://t.me/InfinityUpdatesX"),
     ],
 ]
 
@@ -130,7 +130,7 @@ FLARE_IMG = "https://telegra.ph/file/3498e62c2e27c7d653a33.mp4"
 HELP_IMG = "https://telegra.ph/file/b8ec953c50c8fd51b4edc.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-Go to @infinty_support for donation"""
+Go to @infintysupportX for donation"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -262,7 +262,7 @@ def start(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="📢 Updates",
-                            url="https://t.me/Infinite_Updates",
+                            url="https://t.me/InfinityUpdatesX",
                         ),
                     ]
                 ]
