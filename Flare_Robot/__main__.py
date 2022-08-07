@@ -101,7 +101,7 @@ buttons = [
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
         InlineKeyboardButton(text="🌎Discussion Group", url="https://t.me/weebs_association"),
-        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/GladiusSama"),
+        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Gladius_SamaX"),
     ],
     [
         InlineKeyboardButton(text="🚑Support", url=f"https://t.me/InfinitySupportX"),
