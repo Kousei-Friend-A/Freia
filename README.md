@@ -18,6 +18,6 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 
 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Asta-Silva/Freia.git)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Gladius-Sama/Freia.git)
 
 </details>  
