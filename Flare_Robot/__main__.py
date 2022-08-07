@@ -85,33 +85,33 @@ PM_START_TEXT = """
 *I am a group management bot with a lots of  advance Features.
 ❃⋆✦⋆──────────────⋆✦⋆❃
 ➷ *Uptime:* {}
-➷ {} *users are Sexxy
+➷ {} *users
 ❃⋆✦⋆──────────────⋆✦⋆❃
-➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/e553ffc8f91890451f2a3.jpg) ××
+➹ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/ce9f230db5f4137fba11b.jpg) ××
 """
 
 
 buttons = [
     [
         InlineKeyboardButton(
-            text=f"Add Freia To Your Group",
-            url=f"t.me/FlareXRobot?startgroup=true",
+            text=f"Add Gojo To Your Group",
+            url=f"t.me/SatoruGojoXRobot?startgroup=true",
         )
     ],
     [
         InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
-        InlineKeyboardButton(text="🌎Chit Chat", url="https://t.me/KamadoSupport"),
-        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Asta_Silva002"),
+        InlineKeyboardButton(text="🌎Discussion Group", url="https://t.me/weebs_association"),
+        InlineKeyboardButton(text="[►Owner◄]", url="https://t.me/Gladius_Sama"),
     ],
     [
-        InlineKeyboardButton(text="🚑Support", url=f"https://t.me/KamadoSupport"),
-        InlineKeyboardButton(text="📡Updates", url="https://t.me/Freia_Updates"),
+        InlineKeyboardButton(text="🚑Support", url=f"https://t.me/Infinity_Support"),
+        InlineKeyboardButton(text="📡Updates", url="https://t.me/Infinite_Updates"),
     ],
 ]
 
 
 HELP_STRINGS = """
-Main commands available[.](https://telegra.ph/file/83b00bff39cb132dd3795.jpg)
+Main commands available[.](https://telegra.ph/file/b8ec953c50c8fd51b4edc.jpg)
  ➢ /help: PM's you this message.
  ➢ /help <module name>: PM's you info about that module.
  ➢ /donate: information on how to donate!
@@ -126,11 +126,11 @@ Main commands available[.](https://telegra.ph/file/83b00bff39cb132dd3795.jpg)
 )
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-FLARE_IMG = "https://telegra.ph/file/7bee20c785cbed7616ad3.mp4"
-HELP_IMG = "https://telegra.ph/file/83b00bff39cb132dd3795.jpg"
+FLARE_IMG = "https://telegra.ph/file/3498e62c2e27c7d653a33.mp4"
+HELP_IMG = "https://telegra.ph/file/b8ec953c50c8fd51b4edc.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-But Freia is free for everyone"""
+Go to @infinty_support for donation"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -262,7 +262,7 @@ def start(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="📢 Updates",
-                            url="https://t.me/Freia_Updates",
+                            url="https://t.me/Infinite_Updates",
                         ),
                     ]
                 ]
