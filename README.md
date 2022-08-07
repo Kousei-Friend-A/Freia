@@ -1,4 +1,4 @@
-#Flare 
+#Gojo
 
 <details>
 	<summary>Heroku Deploy</summary>
