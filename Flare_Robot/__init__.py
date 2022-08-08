@@ -120,7 +120,7 @@ if ENV:
         "FLARE_PHOTO", "https://telegra.ph/file/2a171330f0ad1fc02465c.jpg"
     )
     BOT_NAME = os.environ.get("BOT_NAME", None)
-    STRING_SESSION = os.environ.get("STRING_SESSION", None)
+  #  STRING_SESSION = os.environ.get("STRING_SESSION", None)
     BOT_API_URL = os.environ.get("BOT_API_URL", "https://api.telegram.org/bot")
 
     try:
@@ -200,7 +200,7 @@ else:
     FLARE_PHOTO = Config.FLARE_PHOTO
     DB_URL = Config.DB_URI
     BOT_NAME = Config.BOT_NAME
-    STRING_SESSION = Comfig.STRING_SESSION
+   # STRING_SESSION = Comfig.STRING_SESSION
     BOT_API_URL = Config.BOT_API_URL
 
     try:
