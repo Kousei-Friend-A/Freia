@@ -185,13 +185,7 @@
          "description": " API HASH of 2nd telegram account if you dont two accounts then use the same accounts API HASH, but i recommend using 2nd accounts API HASH.",
          "required": true,
          "value": "4fe31100223e1167bde36342712fdbda"
-       }, 
-       "STRING_SESSION": {
-         "description": "Telethon String Session, create it from https://repl.it/@SpEcHiDe/GenerateStringSession .",
-         "required": true,
-         "value": ""
-      }
-      
+       }            
    }
 } 
 
