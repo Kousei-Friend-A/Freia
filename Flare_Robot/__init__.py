@@ -87,7 +87,7 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     DB_URL = os.environ.get(
         "DATABSE_URL",
-        None
+        "postgresql://qzjdsqfv:4FqGkkMd5cTapST-n2N7kZ5Uct1hBCB1@castor.db.elephantsql.com/qzjdsqfv"
     )
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
@@ -108,7 +108,7 @@ if ENV:
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     REDIS_URL = os.environ.get(
         "REDIS_URL",
-        None
+        "redis://Asta:Asta_123@redis-11259.c277.us-east-1-3.ec2.cloud.redislabs.com:11259/Asta"
     )
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
@@ -120,7 +120,7 @@ if ENV:
         "FLARE_PHOTO", "https://telegra.ph/file/2a171330f0ad1fc02465c.jpg"
     )
     BOT_NAME = os.environ.get("BOT_NAME", None)
-  #  STRING_SESSION = os.environ.get("STRING_SESSION", None)
+  #  STRING_SESSION = os.environ.get("STRING_SESSION", "1BVtsOJABu063wCoaqL7VvFyzLpGKPE86ysPzZnTdoJqjGmswx3YX9NigOtWMzQm4ogHzps_oL-v0ilkZ-q1dQULwsOETax8GPv8sdNLbi47BddwWzlv-ds2LMZeo6NS4guSE3x-pG4cghherxgQQuGrf7BYnN_0M2olxNiyxfNewyya0F_JmcKrwwpJa1atOkSIiOYFnnDPqhIKgK6g8VTEHaGHJLe0XvjbMewOukjtoPm3HEoAKndEnqBe-SfE3fqMDf_Q3vVldotr1OWrnKsWn3GxUZtS53XfsE4Q739o7b2IqbMPtmoTnOkMUN-Czm5QnTV2ya4FcASNXSkmYQukEXn08Ilo=")
     BOT_API_URL = os.environ.get("BOT_API_URL", "https://api.telegram.org/bot")
 
     try:
