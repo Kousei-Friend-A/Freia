@@ -82,9 +82,9 @@ if ENV:
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
     ARQ_API_URL = "https://thearq.tech"
-    API_ID = os.environ.get("API_ID", None)
+    API_ID = os.environ.get("API_ID", "9189947")
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", True)
-    API_HASH = os.environ.get("API_HASH", None)
+    API_HASH = os.environ.get("API_HASH", "018643c62f8cb9141b3bdcd11e0c8b41")
     DB_URL = os.environ.get(
         "DATABSE_URL",
         "postgresql://qzjdsqfv:4FqGkkMd5cTapST-n2N7kZ5Uct1hBCB1@castor.db.elephantsql.com/qzjdsqfv"
@@ -120,7 +120,7 @@ if ENV:
         "FLARE_PHOTO", "https://telegra.ph/file/2a171330f0ad1fc02465c.jpg"
     )
     BOT_NAME = os.environ.get("BOT_NAME", None)
-  #  STRING_SESSION = os.environ.get("STRING_SESSION", "1BVtsOJABu063wCoaqL7VvFyzLpGKPE86ysPzZnTdoJqjGmswx3YX9NigOtWMzQm4ogHzps_oL-v0ilkZ-q1dQULwsOETax8GPv8sdNLbi47BddwWzlv-ds2LMZeo6NS4guSE3x-pG4cghherxgQQuGrf7BYnN_0M2olxNiyxfNewyya0F_JmcKrwwpJa1atOkSIiOYFnnDPqhIKgK6g8VTEHaGHJLe0XvjbMewOukjtoPm3HEoAKndEnqBe-SfE3fqMDf_Q3vVldotr1OWrnKsWn3GxUZtS53XfsE4Q739o7b2IqbMPtmoTnOkMUN-Czm5QnTV2ya4FcASNXSkmYQukEXn08Ilo=")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "1BVtsOJABu063wCoaqL7VvFyzLpGKPE86ysPzZnTdoJqjGmswx3YX9NigOtWMzQm4ogHzps_oL-v0ilkZ-q1dQULwsOETax8GPv8sdNLbi47BddwWzlv-ds2LMZeo6NS4guSE3x-pG4cghherxgQQuGrf7BYnN_0M2olxNiyxfNewyya0F_JmcKrwwpJa1atOkSIiOYFnnDPqhIKgK6g8VTEHaGHJLe0XvjbMewOukjtoPm3HEoAKndEnqBe-SfE3fqMDf_Q3vVldotr1OWrnKsWn3GxUZtS53XfsE4Q739o7b2IqbMPtmoTnOkMUN-Czm5QnTV2ya4FcASNXSkmYQukEXn08Ilo=")
     BOT_API_URL = os.environ.get("BOT_API_URL", "https://api.telegram.org/bot")
 
     try:
@@ -200,7 +200,7 @@ else:
     FLARE_PHOTO = Config.FLARE_PHOTO
     DB_URL = Config.DB_URI
     BOT_NAME = Config.BOT_NAME
-   # STRING_SESSION = Comfig.STRING_SESSION
+    STRING_SESSION = Config.STRING_SESSION
     BOT_API_URL = Config.BOT_API_URL
 
     try:
