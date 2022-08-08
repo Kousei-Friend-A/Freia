@@ -43,7 +43,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    TOKEN = os.environ.get("TOKEN", "5207358454:AAF9qCxHfItw0sNpIkD4SHg8RJU_OV0UKGc")
+    TOKEN = os.environ.get("TOKEN", "5488665198:AAHs1hjjbaocOS6ZIiG6hKPw7uFo3YvbHWM")
 
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", "5202917395"))
@@ -105,7 +105,7 @@ if ENV:
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
     API_WEATHER = os.environ.get("API_OPENWEATHER", None)
     WALL_API = os.environ.get("WALL_API", None)
-    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
+    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", "mongodb+srv://gladius:8004175000@cluster0.ja59pfj.mongodb.net/?retryWrites=true&w=majority")
     REDIS_URL = os.environ.get(
         "REDIS_URL",
         "redis://Asta:Asta_123@redis-11259.c277.us-east-1-3.ec2.cloud.redislabs.com:11259/Asta"
