@@ -18,7 +18,7 @@ async def authorised(func, subFunc2, client, message, *args, **kwargs):
         try:
             await message.reply_text(str(e))
         except ChatWriteForbidden:
-            await pgram.leave_chat(chatID)
+            await pbot.leave_chat(chatID)
     return subFunc2
 
 
