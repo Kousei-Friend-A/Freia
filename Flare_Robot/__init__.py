@@ -82,9 +82,9 @@ if ENV:
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
     ARQ_API_URL = "https://thearq.tech"
-    API_ID = os.environ.get("API_ID", "9189947")
+    API_ID = os.environ.get("API_ID", None)
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", True)
-    API_HASH = os.environ.get("API_HASH", "018643c62f8cb9141b3bdcd11e0c8b41")
+    API_HASH = os.environ.get("API_HASH", None)
     DB_URL = os.environ.get(
         "DATABSE_URL",
         "postgresql://qzjdsqfv:4FqGkkMd5cTapST-n2N7kZ5Uct1hBCB1@castor.db.elephantsql.com/qzjdsqfv"
