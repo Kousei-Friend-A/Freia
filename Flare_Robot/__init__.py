@@ -264,6 +264,8 @@ aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
+STRING_SESSION2 = "1BVtsOHsBu50hPJTt5PlE_mUoYr6as8wCcjbNLkyrRo63Gh_AnCraIR9ffdvouTrPro1c1Ga4JeW1oINiMS0GK70DBfiUuEiXcbc1L6Vz6zgWlm9T3cBlfn4Z2dpjynK00GTUOhYGDpFX82mBZz4F7QnO6_1fBEcObeVEopcKcwQwem6_A-S43GjRoumXXsgYHyrxB-GQk3GMI0qK_yqyMtewA1jDLPsZFOrsBbrNi2oPiT2JstP0YXq8UlIpUGKyUVJ_k1-FNdAgrBd9a1laKldUVW7bLYq1dQKxfSBp_K9nYJ6U31Hgn0J1SF5iGLnvhJSKg9ydl0lRl98nUCk2JfMF3AtAAzY="
+ubot = TelegramClient(StringSession(STRING_SESSION2), API_ID, API_HASH)
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
 
