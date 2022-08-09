@@ -2,8 +2,8 @@
 from telegram import  Update, ParseMode 
 from telegram.ext import run_async ,CallbackContext
 from gpytranslate import SyncTranslator
-from Akenobot import dispatcher
-from Akenobot.modules.disable import DisableAbleCommandHandler
+from Flare_Robot import dispatcher
+from Flare_Robot.modules.disable import DisableAbleCommandHandler
 trans = SyncTranslator()
  
 def totranslate(update: Update, context: CallbackContext) -> None:
