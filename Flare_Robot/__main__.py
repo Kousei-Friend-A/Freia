@@ -82,7 +82,7 @@ FLARE_PHOTO = "https://telegra.ph/file/e553ffc8f91890451f2a3.jpg"
 PM_START_TEXT = """
 ────「 {} 」────
 *Heyaa! {}*
-*I am a group management bot with a lots of  advance Features.
+*I am a group management bot with a lots of  advance Features. Gojo Xd
 ❃⋆✦⋆──────────────⋆✦⋆❃
 ➷ *Uptime:* {}
 ➷ {} *users
