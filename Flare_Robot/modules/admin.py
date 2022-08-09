@@ -374,23 +374,24 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
             message.reply_text("An error occured while promoting.")
         return
 
-    message.reply_text(
-        f"# FULLY PROMOTED\n"
-      + f"   "
-      + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-      + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
-      + f" with title <code>{title[:16]}</code>!",
+    bot.sendMessage(
+           chat.id,
+         f"#PROMOTED SUCCESSFULLY\n"
+       + f""
+       + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+       + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
         parse_mode=ParseMode.HTML,
     )
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#FULLPROMOTED\n"
+        f"#PROMOTED\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
 
     return log_message
+
 
 @connection_status
 @bot_admin
@@ -454,7 +455,7 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
 
     bot.sendMessage(
         chat.id,
-         f"#SUCCESSFULLY LOWPROMOTED\n"
+         f"#SUCCESSFULLY FULl-PROMOTED\n"
        + f"     "
        + f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
        + f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}",
@@ -463,7 +464,7 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#LOWPROMOTED\n"
+        f"#FULL-PROMOTED\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
