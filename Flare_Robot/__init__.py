@@ -120,7 +120,7 @@ if ENV:
         "FLARE_PHOTO", "https://telegra.ph/file/2a171330f0ad1fc02465c.jpg"
     )
     BOT_NAME = os.environ.get("BOT_NAME", None)
-    STRING_SESSION = os.environ.get("STRING_SESSION", "1BVtsOJABu063wCoaqL7VvFyzLpGKPE86ysPzZnTdoJqjGmswx3YX9NigOtWMzQm4ogHzps_oL-v0ilkZ-q1dQULwsOETax8GPv8sdNLbi47BddwWzlv-ds2LMZeo6NS4guSE3x-pG4cghherxgQQuGrf7BYnN_0M2olxNiyxfNewyya0F_JmcKrwwpJa1atOkSIiOYFnnDPqhIKgK6g8VTEHaGHJLe0XvjbMewOukjtoPm3HEoAKndEnqBe-SfE3fqMDf_Q3vVldotr1OWrnKsWn3GxUZtS53XfsE4Q739o7b2IqbMPtmoTnOkMUN-Czm5QnTV2ya4FcASNXSkmYQukEXn08Ilo=")
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
     BOT_API_URL = os.environ.get("BOT_API_URL", "https://api.telegram.org/bot")
 
     try:
