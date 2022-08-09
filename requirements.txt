@@ -35,7 +35,7 @@ ujson>=5.4.0
 wget
 wikipedia==1.4.0
 httpx
-pyrogram==1.4.0
+pyrogram==1.4.16
 motor
 pymongo==3.12.1
 DateTime
