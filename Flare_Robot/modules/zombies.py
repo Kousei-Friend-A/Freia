@@ -97,7 +97,7 @@ async def rm_deletedacc(show):
     await memek.edit(del_status)
         
 from telethon.tl.types import UserStatusLastMonth, UserStatusLastWeek, ChatBannedRights
-from Akenobot.events import register
+from Flare_Robot.events import register
 from telethon import *
 from telethon.tl.functions.channels import (EditBannedRequest)
                                             
