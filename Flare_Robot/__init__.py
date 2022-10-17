@@ -43,10 +43,10 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    TOKEN = os.environ.get("TOKEN", "5488665198:AAHs1hjjbaocOS6ZIiG6hKPw7uFo3YvbHWM")
+    TOKEN = "5435355012:AAG4TwxBNsJoPBouwNurL1xk_wvuRS8cBfc"
 
     try:
-        OWNER_ID = int(os.environ.get("OWNER_ID", "5202917395"))
+        OWNER_ID = 5152809878
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
@@ -75,16 +75,16 @@ if ENV:
         raise Exception("Your tiger users list does not contain valid integers.")
 
     INFOPIC = bool(os.environ.get("INFOPIC", True))
-    EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
-    ERROR_LOGS = os.environ.get("ERROR_LOGS", None)
+    EVENT_LOGS = -1001669683772
+    ERROR_LOGS = -1001669683772
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     URL = os.environ.get("URL", "")  # Does not contain token
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
     ARQ_API_URL = "https://thearq.tech"
-    API_ID = os.environ.get("API_ID", None)
+    API_ID = 17945796
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", True)
-    API_HASH = os.environ.get("API_HASH", None)
+    API_HASH = "4a05481a5da2d66f801acffc4ca5ee4b"
     DB_URL = os.environ.get(
         "DATABSE_URL",
         "postgresql://qzjdsqfv:4FqGkkMd5cTapST-n2N7kZ5Uct1hBCB1@castor.db.elephantsql.com/qzjdsqfv"
